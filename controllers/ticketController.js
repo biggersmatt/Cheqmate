@@ -15,16 +15,40 @@ router.get('/:id', (req, res) => {
 });
 
 // GET edit ticket
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/ticket/', (req, res) => {
   const ticketId = req.params.id;
-  db.Ticket.findByIdAndUpdate(ticketId, (err, foundTicket) => {
+  db.Ticket.findById(ticketId, (err, foundTicket) => {
     if (err) {
-    res.send(err);
+    console.log(err);
     }
     res.render('./ticket/ticketEdit'< {
       ticket: foundTicket
     });
   });
+});
+
+// PUT ROUTE TO UPDATE TICKET
+router.put('/:id', (req, res) => {
+  const ticketId = req.params.id;
+  const updatedTicketObj = {
+    ticketTitle: req.body.ticketTitle,
+    assignedDev: req.body.assignedDev,
+    project: req.body.project,
+    ticketStatus: req.body.ticketStatus,
+    created: req.body.created,
+    ticketDescript: req.body.ticketDescript,
+    submitted: req.body.submitted,
+    ticketPriority: req.body.ticketPriority
+  };
+  
+  db.Ticket.findByIdAndUpdate(ticketId, updatedTicketObj, 
+    {new: true}, 
+    (err, updatedTicket) => {
+      if (err) {
+        res.send(err);
+      }
+      res.redirect(`/ticketShow/${ticketId}`);
+    });
 });
 
 
