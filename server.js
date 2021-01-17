@@ -4,6 +4,7 @@ const methodOverride = require('method-override');
 const app = express();
 const PORT = 4000;
 const userController = require('./controllers/userController');
+const ticketController = require('./controllers/ticketController');
 require('./database');
 
 
@@ -16,7 +17,7 @@ app.use(methodOverride('_method'));
 
 // DEFAULT PATH
 app.use('/user', userController);
-// app.use('/user/ticket', ticketController);
+app.use('/user/ticket', ticketController);
 
 // DEFAULT PATH ON LOCALHOST
 app.get('/', (req, res) => {

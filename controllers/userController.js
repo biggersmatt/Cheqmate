@@ -2,15 +2,18 @@ const express = require('express');
 const router = express.Router();
 const db = require('../database');
 
-// USER HOME ROUTE
-router.get('/', (req, res) => {
-  res.render('./user/userShow');
-});
+// Current route '/user'
 
-// GET new ticket
+
+// GET new user sign up page
 router.get('/new', (req, res) => {
   res.render('./user/userNew');
 })
+
+// GET user show dashboard
+router.get('/:id', (req, res) => {
+  res.render('./user/userShow');
+});
 
 // POST new ticket to database
 router.post('/', (req, res) => {
