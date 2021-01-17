@@ -11,11 +11,18 @@
   <main>
     <nav>
       <ul>
+        <form action="/user/:id" method="GET">
+          <label for="login-name">Enter Your Email</label>
+          <input type="email" name="email" id="login-email">
+          <br>
+          <label for="login-password">Enter Your Password</label>
+          <input type="password" name="password" id="login-password" minlength="6">
+          <br>
+          <button>Login to Dashboard</button>
+        </form>
+
         <li>
-          <a href="/user/:id">Login to Dashboard</a>
-        </li>
-        <li>
-          <a href="/user/new">Sign Up</a>
+          <p>Not a user? <a href="/user/new">Sign Up</a></p>
         </li>
       </ul>
     </nav>
