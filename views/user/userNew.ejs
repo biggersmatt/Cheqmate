@@ -9,13 +9,21 @@
   <h1>Sign Up Page</h1>
 
   <main>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-      </ul>
-    </nav>
+    <form action="/" method="GET">
+        <label for="login-name">Enter Your Name</label>
+      <input type="text" name="name" id="login-email">
+        <br>
+        <label for="login-password">Enter Your Username</label>
+      <input type="text" name="username" id="login-password">
+        <br>
+        <label for="login-password">Enter Your Email</label>
+      <input type="email" name="email" id="login-password">
+        <br>
+        <label for="login-password">Enter Your Password</label>
+      <input type="password" name="password" id="login-password" minlength="6">
+        <br>
+      <button>Create Your Account</button>
+    </form>
   </main>
 
 </body>
