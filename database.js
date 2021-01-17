@@ -22,5 +22,5 @@ mongoose.connection.on('error', (err) => {
 
 module.exports = {
   Location: require('./models/Ticket'),
-  Uesr: require('./models/User'),
+  User: require('./models/User'),
 };

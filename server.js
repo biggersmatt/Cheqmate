@@ -19,7 +19,7 @@ app.use('/user', userController);
 
 // DEFAULT PATH ON LOCALHOST
 app.get('/', (req, res) => {
-  res.render('main');
+  res.render('index');
 });
 
 // ----------APP LISTEN ON PORT-----------------
