@@ -4,12 +4,12 @@ const db = require('../database');
 
 // USER HOME ROUTE
 router.get('/', (req, res) => {
-  res.render('./user/dashboard');
+  res.render('./user/userShow');
 });
 
 // GET new ticket
-router.get('/newticket', (req, res) => {
-  res.render('./user/ticketnew');
+router.get('/new', (req, res) => {
+  res.render('./user/userNew');
 })
 
 // POST new ticket to database

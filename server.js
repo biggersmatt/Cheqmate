@@ -16,6 +16,7 @@ app.use(methodOverride('_method'));
 
 // DEFAULT PATH
 app.use('/user', userController);
+// app.use('/user/ticket', ticketController);
 
 // DEFAULT PATH ON LOCALHOST
 app.get('/', (req, res) => {
