@@ -16,7 +16,15 @@ router.get('/:id', (req, res) => {
 
 // GET edit ticket
 router.get('/:id/edit', (req, res) => {
-  res.render('./ticket/ticketEdit');
+  const ticketId = req.params.id;
+  db.Ticket.findByIdAndUpdate(ticketId, (err, foundTicket) => {
+    if (err) {
+    res.send(err);
+    }
+    res.render('./ticket/ticketEdit'< {
+      ticket: foundTicket
+    });
+  });
 });
 
 
