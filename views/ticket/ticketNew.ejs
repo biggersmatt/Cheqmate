@@ -11,20 +11,35 @@
   <main>
     <nav>
       <ul>
-        <li>
-          <a href="/user/:id">Submit Ticket</a>
-        </li>
     </nav>
-    <ul>
-      <li>Ticket Title: <%= ticket.ticketTitle %> </li>
-      <li>Assigned Developer: <%= ticket.assignedDev %> </li>
-      <li>Project: <%= ticket.project %> </li>
-      <li>Ticket Status: <%= ticket.ticketStatus %> </li>
-      <li>Created On: <%= ticket.created %> </li>
-      <li>Ticket Description: <%= ticket.ticketDescript %> </li>
-      <li>Submitted: <%= ticket.submitted %> </li>
-      <li>Ticket Priority: <%= ticket.ticketPriority %> </li>
-    </ul>
+    <form action="./user/userShow" method="POST">
+      <ul>
+        <label for="ticket-title">Ticket Title:</label>
+        <input type="text" id="ticket-title" name="ticketTitle" value="<%= ticket.ticketTitle %> ">
+  
+        <label for="assigned-developer">Assigned Developer:</label>
+        <input type="text" id="assigned-dev" name="assignedDev" value="<%= ticket.assignedDev %> ">
+  
+        <label for="project">Project:</label>
+        <input type="text" id="project" name="project" value="<%= ticket.project %> ">
+  
+        <label for="ticket-status">Ticket Status:</label>
+        <input type="text" id="ticket-status" name="ticketStatus" value="<%= ticket.ticketStatus %> ">
+  
+        <label for="created-date">Created On:</label>
+        <input type="date" id="created-on" name="created" value="<%= ticket.created %> ">
+  
+        <label for="ticket-description">Ticket Description:</label>
+        <input type="text" id="ticket-description" name="ticketDescript" value="<%= ticket.ticketDescript %> ">
+  
+        <label for="submitted">Submitted:</label>
+        <input type="checkbox" id="submitted" name="submitted" value="<%= ticket.submitted %> ">
+  
+        <label for="ticket-priority">Ticket Priority:</label>
+        <input type="text" id="ticket-priority" name="ticketPriority" value="<%= ticket.ticketPriority %> ">
+      </ul>
+      <button><a href="/user/:id">Submit Ticket</a></button>
+    </form>
   </main>
 
 </body>
