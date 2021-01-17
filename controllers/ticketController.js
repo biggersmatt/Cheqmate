@@ -10,7 +10,7 @@ router.get('/new', (req, res) => {
 });
 
 // GET show ticket
-router.get('/:id', (req, res) => {
+router.get('/:id/showTicket', (req, res) => {
   const ticketId = req.params.id;
   db.Ticket.findById(ticketId, (err, foundTicket) => {
     if (err) {

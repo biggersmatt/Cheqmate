@@ -15,6 +15,16 @@
           <a href="/user/:id">Submit Ticket</a>
         </li>
     </nav>
+    <ul>
+      <li>Ticket Title: <%= ticket.ticketTitle %> </li>
+      <li>Assigned Developer: <%= ticket.assignedDev %> </li>
+      <li>Project: <%= ticket.project %> </li>
+      <li>Ticket Status: <%= ticket.ticketStatus %> </li>
+      <li>Created On: <%= ticket.created %> </li>
+      <li>Ticket Description: <%= ticket.ticketDescript %> </li>
+      <li>Submitted: <%= ticket.submitted %> </li>
+      <li>Ticket Priority: <%= ticket.ticketPriority %> </li>
+    </ul>
   </main>
 
 </body>
