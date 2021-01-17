@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 });
 
 // GET new ticket
-router.get('/new', (req, res) => {
+router.get('/newticket', (req, res) => {
   res.render('./user/ticketnew');
 })
 
