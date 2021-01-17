@@ -29,8 +29,8 @@ router.get('/:id/ticket/', (req, res) => {
     if (err) {
     console.log(err);
     }
-    res.render('./ticket/ticketEdit'< {
-      ticket: foundTicket
+    res.render('./ticket/ticketEdit', {
+      ticket: foundTicket,
     });
   });
 });
@@ -57,6 +57,16 @@ router.put('/:id', (req, res) => {
       }
       res.redirect(`./ticketShow/${ticketId}`);
     });
+});
+
+router.delete('/:id', (req, res) => {
+  const ticketId = req.params.id;
+  db.Ticket.findByIdAndDelete(ticketId, (err, deletedTicket) => {
+    if(err) {
+      res.send(err);
+    }
+    res.redirect('./user/userShow');
+  });
 });
 
 
