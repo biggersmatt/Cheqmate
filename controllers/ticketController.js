@@ -59,6 +59,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// DELETE ROUTE AND REDIRECT TO USER HOME
 router.delete('/:id', (req, res) => {
   const ticketId = req.params.id;
   db.Ticket.findByIdAndDelete(ticketId, (err, deletedTicket) => {
