@@ -14,12 +14,6 @@
         <li>
           <a href="/user/:id">Dashboard</a>
         </li>
-        <li>
-          <a href="/user/:id/ticket/<%= ticket._id %>/edit">Edit Ticket</a>
-        </li>
-        <li>
-          <a href="/user/:id">Delete Ticket</a>
-        </li>
     </nav>
     <ul>
       <li>Ticket Title: <%= ticket.title %> </li>
@@ -31,6 +25,10 @@
       <li>Submitted: <%= ticket.submitted %> </li>
       <li>Ticket Priority: <%= ticket.priority %> </li>
     </ul>
+    <button><a href="/user/:id/ticket/<%= ticket._id %>/edit">Edit Ticket</a></button>
+    <form method="POST" action="/user/:id/ticket/<%= ticket._id %>?_method=DELETE">
+      <button type="submit">Delete Ticket</button>
+    </form>
   </main>
 
 </body>

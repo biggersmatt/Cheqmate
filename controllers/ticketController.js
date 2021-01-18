@@ -73,7 +73,7 @@ router.delete('/:id', (req, res) => {
     if(err) {
       res.send(err);
     }
-    res.redirect('./user/userShow');
+    res.redirect('/user/:id');
   });
 });
 
