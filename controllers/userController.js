@@ -10,6 +10,17 @@ router.get('/new', (req, res) => {
   res.render('./user/userNew');
 })
 
+// POST ROUTE to create new user
+router.post('/', (req, res) => {
+  console.log('New User Created');
+  db.User.create(req.body, (err, userCreated) => {
+    if (err) {
+      console.log(err);
+    }
+    res.redirect('/');
+  });
+});
+
 // GET user show dashboard
 router.get('/:id', (req, res) => {
   db.Ticket.find({}, (err, allTickets) => {
