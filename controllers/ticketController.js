@@ -46,14 +46,14 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', (req, res) => {
   const ticketId = req.params.id;
   const updatedTicketObj = {
-    ticketTitle: req.body.ticketTitle,
-    assignedDev: req.body.assignedDev,
+    title: req.body.title,
+    developer: req.body.developer,
     project: req.body.project,
-    ticketStatus: req.body.ticketStatus,
-    created: req.body.created,
-    ticketDescript: req.body.ticketDescript,
+    status: req.body.status,
+    dueDate: req.body.dueDate,
+    description: req.body.description,
     submitted: req.body.submitted,
-    ticketPriority: req.body.ticketPriority
+    priority: req.body.priority
   };
   
   db.Ticket.findByIdAndUpdate(ticketId, updatedTicketObj, 
