@@ -9,34 +9,40 @@
   <h1>New Ticket</h1>
 
   <main>
-    <nav>
-      <ul>
-    </nav>
     <form action="./user/userShow" method="POST">
       <ul>
-        <label for="ticket-title">Ticket Title:</label>
-        <input type="text" id="ticket-title" name="ticketTitle" value="<%= ticket.ticketTitle %> ">
-  
-        <label for="assigned-developer">Assigned Developer:</label>
-        <input type="text" id="assigned-dev" name="assignedDev" value="<%= ticket.assignedDev %> ">
-  
-        <label for="project">Project:</label>
-        <input type="text" id="project" name="project" value="<%= ticket.project %> ">
-  
-        <label for="ticket-status">Ticket Status:</label>
-        <input type="text" id="ticket-status" name="ticketStatus" value="<%= ticket.ticketStatus %> ">
-  
-        <label for="created-date">Created On:</label>
-        <input type="date" id="created-on" name="created" value="<%= ticket.created %> ">
-  
-        <label for="ticket-description">Ticket Description:</label>
-        <input type="text" id="ticket-description" name="ticketDescript" value="<%= ticket.ticketDescript %> ">
-  
-        <label for="submitted">Submitted:</label>
-        <input type="checkbox" id="submitted" name="submitted" value="<%= ticket.submitted %> ">
-  
-        <label for="ticket-priority">Ticket Priority:</label>
-        <input type="text" id="ticket-priority" name="ticketPriority" value="<%= ticket.ticketPriority %> ">
+        <li>
+          <label for="ticket-title">Ticket Title:</label>
+          <input type="text" id="ticket-title" name="ticketTitle">
+        </li>
+        <li>
+          <label for="assigned-developer">Assigned Developer:</label>
+          <input type="text" id="assigned-dev" name="assignedDev">
+        </li>
+        <li>
+          <label for="project">Project:</label>
+          <input type="text" id="project" name="project">
+        </li>
+        <li>
+          <label for="ticket-status">Ticket Status:</label>
+          <input type="text" id="ticket-status" name="ticketStatus">
+        </li>
+        <li>
+          <label for="created-date">Created On:</label>
+          <input type="date" id="created-on" name="created">
+        </li>
+        <li>
+          <label for="ticket-description">Ticket Description:</label>
+          <input type="text" id="ticket-description" name="ticketDescript">
+        </li>
+        <li>
+          <label for="submitted">Submitted:</label>
+          <input type="checkbox" id="submitted" name="submitted">
+        </li>
+        <li>
+          <label for="ticket-priority">Ticket Priority:</label>
+          <input type="text" id="ticket-priority" name="ticketPriority">
+        </li>
       </ul>
       <button>Submit Ticket</button>
     </form>
