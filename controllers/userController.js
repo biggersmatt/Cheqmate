@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
     const context = {
       tickets: allTickets,
     }
-    res.render('./user/userShow');
+    res.render('./user/userShow', context);
   })
 });
 

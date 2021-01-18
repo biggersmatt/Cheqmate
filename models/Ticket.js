@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const ticketSchema = new mongoose.Schema({
-  ticketTitle: {
+  title: {
     type: String,
     required: true,
   },
-  assignedDev: {
+  developer: {
     type: String,
     required: true,
   },
@@ -13,15 +13,15 @@ const ticketSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  ticketStatus: {
+  status: {
     type: String,
     required: true,
   },
-  created: {
+  dueDate: {
     type: Date,
     required: true,
   },
-  ticketDescript: {
+  description: {
     type: String,
     required: true,
   },
@@ -29,7 +29,7 @@ const ticketSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
-  ticketPriority: {
+  priority: {
     type: String,
     required: true,
   },

@@ -8,7 +8,7 @@
 <body>
   <h1>Dashboard</h1>
 
-  <main>
+  <header>
     <nav>
       <ul>
         <li>
@@ -18,11 +18,12 @@
           <a href="/user/:id/ticket/new">Create New Ticket</a>
         </li>
         <li>
-          <a href="/user/:id/ticket/:id">Ticket Show</a>
+          <a href="/user/:id/ticket/:id">Ticket Show<%= tickets.name %> </a>
         </li>
       </ul>
     </nav>
-  </main>
+  </header>
+
 
 </body>
 </html>
