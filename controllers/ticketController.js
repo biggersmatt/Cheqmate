@@ -19,12 +19,10 @@ router.post('/', (req, res) => {
 })
 
 // GET show ticket
-router.get('/:id/showTicket', (req, res) => {
+router.get('/:id', (req, res) => {
   const ticketId = req.params.id;
   db.Ticket.findById(ticketId, (err, foundTicket) => {
-    if (err) {
-      res.send(err);
-    }
+    if (err) console.log(err);
     res.render('./ticket/ticketShow', {
       ticket: foundTicket,
     });
