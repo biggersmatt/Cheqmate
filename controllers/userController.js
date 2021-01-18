@@ -12,7 +12,13 @@ router.get('/new', (req, res) => {
 
 // GET user show dashboard
 router.get('/:id', (req, res) => {
-  res.render('./user/userShow');
+  db.Ticket.find({}, (err, allTickets) => {
+    if(err) console.log(err);
+    const context = {
+      tickets: allTickets,
+    }
+    res.render('./user/userShow');
+  })
 });
 
 
