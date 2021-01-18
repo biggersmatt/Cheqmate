@@ -15,7 +15,7 @@ router.get('/:id', (req, res) => {
   db.Ticket.find({}, (err, allTickets) => {
     if(err) console.log(err);
     const context = {
-      tickets: allTickets,
+      ticket: allTickets,
     }
     res.render('./user/userShow', context);
   })

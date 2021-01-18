@@ -18,11 +18,22 @@
           <a href="/user/:id/ticket/new">Create New Ticket</a>
         </li>
         <li>
-          <a href="/user/:id/ticket/:id">Ticket Show<%= tickets.name %> </a>
+          <a href="/user/:id/ticket/:id">Ticket Show<%= ticket.title %> </a>
         </li>
       </ul>
     </nav>
   </header>
+
+  <main>
+    <h1>List of Tickets</h1>
+    <ul>
+        <% ticket.forEach((one) => { %>
+            <li>
+                <a href="/user/:id/ticket/<%= one._id %> "><%= one.title %></a> 
+            </li>
+        <% }) %>
+    </ul>
+</main>
 
 
 </body>

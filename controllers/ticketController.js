@@ -9,6 +9,15 @@ router.get('/new', (req, res) => {
   res.render('./ticket/ticketNew');
 });
 
+// POST new ticket to database
+router.post('/', (req, res) => {
+  console.log('New Ticket Created')
+  db.Ticket.create(req.body, (err, newTicket) => {
+    if(err) console.log(err);
+    res.redirect('/user/:id');
+  })
+})
+
 // GET show ticket
 router.get('/:id/showTicket', (req, res) => {
   const ticketId = req.params.id;
