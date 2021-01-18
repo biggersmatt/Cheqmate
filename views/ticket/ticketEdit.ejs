@@ -17,31 +17,31 @@
         </li>
         <li>
           <label for="developer">Assigned Developer:</label>
-          <input type="text" id="developer" name="developer">
+          <input type="text" id="developer" name="developer" value="<%= ticket.developer %>">
         </li>
         <li>
           <label for="project">Project:</label>
-          <input type="text" id="project" name="project">
+          <input type="text" id="project" name="project" value="<%= ticket.project %>">
         </li>
         <li>
           <label for="status">Ticket Status:</label>
-          <input type="text" id="status" name="status">
+          <input type="text" id="status" name="status" value="<%= ticket.status %>">
         </li>
         <li>
           <label for="dueDate">Due Date:</label>
-          <input type="date" id="dueDate" name="dueDate">
+          <input type="date" id="dueDate" name="dueDate" value="<%= ticket.dueDate %>">
         </li>
         <li>
           <label for="description">Ticket Description:</label>
-          <input type="text" id="description" name="description">
+          <input type="text" id="description" name="description" value="<%= ticket.description %>">
         </li>
         <li>
           <label for="submitted">Submitted:</label>
-          <input type="checkbox" id="submitted" name="submitted">
+          <input type="checkbox" id="submitted" name="submitted" value="<%= ticket.submitted %>">
         </li>
         <li>
           <label for="priority">Ticket Priority:</label>
-          <input type="text" id="priority" name="priority">
+          <input type="text" id="priority" name="priority" value="<%= ticket.priority %>">
         </li>
       </ul>
       <button type="submit">Submit Ticket</button>
