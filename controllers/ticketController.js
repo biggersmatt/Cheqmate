@@ -30,15 +30,15 @@ router.get('/:id', (req, res) => {
 });
 
 // GET edit ticket
-router.get('/:id/ticket/', (req, res) => {
+router.get('/:id/edit', (req, res) => {
   const ticketId = req.params.id;
   db.Ticket.findById(ticketId, (err, foundTicket) => {
-    if (err) {
-    console.log(err);
-    }
-    res.render('./ticket/ticketEdit', {
+    console.log(req.body)
+    if(err) console.log(err);
+    const context = {
       ticket: foundTicket,
-    });
+    }
+    res.render('./ticket/ticketEdit', context);
   });
 });
 

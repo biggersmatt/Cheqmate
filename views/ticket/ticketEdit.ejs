@@ -9,40 +9,43 @@
   <h1>Edit Ticket</h1>
 
   <main>
-    <nav>
+    <form action="/user/:id/ticket" method="POST">
       <ul>
         <li>
-          <a href="/user/:id">Submit Edit and Return to Dashboard</a>
+          <label for="title">Ticket Title:</label>
+          <input type="text" id="title" name="title" value="<%= ticket.title %>">
         </li>
-    </nav>
-    <form action="./ticket/ticketShow/<%= ticket_.id %>?_method=PUT" method="POST">
-    <ul>
-      <label for="ticket-title">Ticket Title:</label>
-      <input type="text" id="ticket-title" name="ticketTitle" value="<%= ticket.ticketTitle %> ">
-
-      <label for="assigned-developer">Assigned Developer:</label>
-      <input type="text" id="assigned-dev" name="assignedDev" value="<%= ticket.assignedDev %> ">
-
-      <label for="project">Project:</label>
-      <input type="text" id="project" name="project" value="<%= ticket.project %> ">
-
-      <label for="ticket-status">Ticket Status:</label>
-      <input type="text" id="ticket-status" name="ticketStatus" value="<%= ticket.ticketStatus %> ">
-
-      <label for="created-date">Created On:</label>
-      <input type="date" id="created-on" name="created" value="<%= ticket.created %> ">
-
-      <label for="ticket-description">Ticket Description:</label>
-      <input type="text" id="ticket-description" name="ticketDescript" value="<%= ticket.ticketDescript %> ">
-
-      <label for="submitted">Submitted:</label>
-      <input type="checkbox" id="submitted" name="submitted" value="<%= ticket.submitted %> ">
-
-      <label for="ticket-priority">Ticket Priority:</label>
-      <input type="text" id="ticket-priority" name="ticketPriority" value="<%= ticket.ticketPriority %> ">
-    </ul>
-    <button>Update Ticket</button>
-  </form>
+        <li>
+          <label for="developer">Assigned Developer:</label>
+          <input type="text" id="developer" name="developer">
+        </li>
+        <li>
+          <label for="project">Project:</label>
+          <input type="text" id="project" name="project">
+        </li>
+        <li>
+          <label for="status">Ticket Status:</label>
+          <input type="text" id="status" name="status">
+        </li>
+        <li>
+          <label for="dueDate">Due Date:</label>
+          <input type="date" id="dueDate" name="dueDate">
+        </li>
+        <li>
+          <label for="description">Ticket Description:</label>
+          <input type="text" id="description" name="description">
+        </li>
+        <li>
+          <label for="submitted">Submitted:</label>
+          <input type="checkbox" id="submitted" name="submitted">
+        </li>
+        <li>
+          <label for="priority">Ticket Priority:</label>
+          <input type="text" id="priority" name="priority">
+        </li>
+      </ul>
+      <button type="submit">Submit Ticket</button>
+    </form>
   </main>
 
 </body>

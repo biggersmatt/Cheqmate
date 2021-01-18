@@ -15,21 +15,21 @@
           <a href="/user/:id">Dashboard</a>
         </li>
         <li>
-          <a href="/user/:id/ticket/:id/edit">Edit Ticket</a>
+          <a href="/user/:id/ticket/<%= ticket._id %>/edit">Edit Ticket</a>
         </li>
         <li>
           <a href="/user/:id">Delete Ticket</a>
         </li>
     </nav>
     <ul>
-      <li>Ticket Title: <%= ticket.ticketTitle %> </li>
-      <li>Assigned Developer: <%= ticket.assignedDev %> </li>
+      <li>Ticket Title: <%= ticket.title %> </li>
+      <li>Assigned Developer: <%= ticket.developer %> </li>
       <li>Project: <%= ticket.project %> </li>
-      <li>Ticket Status: <%= ticket.ticketStatus %> </li>
-      <li>Created On: <%= ticket.created %> </li>
-      <li>Ticket Description: <%= ticket.ticketDescript %> </li>
+      <li>Ticket Status: <%= ticket.status %> </li>
+      <li>Due Date: <%= ticket.dueDate %> </li>
+      <li>Ticket Description: <%= ticket.description %> </li>
       <li>Submitted: <%= ticket.submitted %> </li>
-      <li>Ticket Priority: <%= ticket.ticketPriority %> </li>
+      <li>Ticket Priority: <%= ticket.priority %> </li>
     </ul>
   </main>
 
