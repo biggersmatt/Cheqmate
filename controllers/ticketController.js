@@ -62,7 +62,7 @@ router.put('/:id', (req, res) => {
       if (err) {
         res.send(err);
       }
-      res.redirect(`./ticketShow/${ticketId}`);
+      res.redirect(`./${ticketId}`);
     });
 });
 

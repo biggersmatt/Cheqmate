@@ -9,7 +9,7 @@
   <h1>Edit Ticket</h1>
 
   <main>
-    <form action="/user/:id/ticket" method="POST">
+    <form action="/user/:id/ticket/<%= ticket._id %>?_method=PUT" method="POST">
       <ul>
         <li>
           <label for="title">Ticket Title:</label>

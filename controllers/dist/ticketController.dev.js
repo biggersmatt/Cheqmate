@@ -61,7 +61,7 @@ router.put('/:id', function (req, res) {
       res.send(err);
     }
 
-    res.redirect("./ticketShow/".concat(ticketId));
+    res.redirect("./".concat(ticketId));
   });
 }); // DELETE ROUTE AND REDIRECT TO USER HOME
 
