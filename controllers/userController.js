@@ -21,6 +21,23 @@ router.post('/', (req, res) => {
   });
 });
 
+// POST ROUTE to handle User Login Form
+// router.post('/', (req, res) => {
+//   db.User.findOne({email: req.body.email}, (err, foundUser) => {
+//     if (err) {
+//       console.log(err);
+//     }
+//     if (!foundUser) {
+//       return res.render('/');
+//     }
+//     // Verify the submitted email and password match
+//     if (foundUser.password === req.body.password) {
+//       return res.redirect(`/user/${foundUser._id}`);
+//     }
+//     res.render('/');
+//   });
+// });
+
 // GET user show dashboard
 router.get('/:id', (req, res) => {
   db.Ticket.find({}, (err, allTickets) => {
