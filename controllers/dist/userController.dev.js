@@ -23,9 +23,6 @@ router.post('/', function (req, res) {
   });
 }); // POST ROUTE to handle User Login Form
 
-router.get('/login', function (req, res) {
-  res.render('./user/userLogin');
-});
 router.post('/login', function (req, res) {
   db.User.findOne({
     email: req.body.email
@@ -35,15 +32,15 @@ router.post('/login', function (req, res) {
     }
 
     if (!foundUser) {
-      return res.render('./user/userLogin');
+      return res.render('index');
     } // Verify the submitted email and password match
 
 
     if (foundUser.password === req.body.password) {
-      return res.redirect('./userShow');
+      return res.redirect("/user/".concat(foundUser.id));
     }
 
-    res.render('/login');
+    res.render('index');
   });
 }); // GET user show dashboard
 
