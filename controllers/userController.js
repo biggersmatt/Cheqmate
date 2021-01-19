@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
     if (err) {
       console.log(err);
     }
-    res.redirect('./user/userLogin');
+    res.redirect('/');
   });
 });
 
