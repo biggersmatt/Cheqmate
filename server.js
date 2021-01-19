@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const app = express();
+// process.env.PORT
 const PORT = 4000;
 const userController = require('./controllers/userController');
 const ticketController = require('./controllers/ticketController');

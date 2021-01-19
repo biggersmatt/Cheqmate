@@ -1,3 +1,7 @@
+:root {
+    --green: rgb(38,185,108);
+}
+
 body {
     background-color: lightblue;
     height: 100vh;
@@ -9,10 +13,24 @@ body {
     align-items: center;
 }
 
+a {
+    text-decoration: none;
+    color: var(--green);
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--green);
+}
+
 /* Login */
 #login-container {
     background-color: grey;
     border-radius: 10px;
+    height: 300px;
     width: 500px;
     padding: 10px;
     display: flex;

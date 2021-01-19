@@ -31,7 +31,7 @@ router.post('/login', (req, res) => {
       console.log(err);
     }
     if (!foundUser) {
-      return res.render('index');
+      return res.redirect('/');
     }
     // Verify the submitted email and password match
     if (foundUser.password === req.body.password) {
