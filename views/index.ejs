@@ -9,23 +9,18 @@
   <h1>Login Page</h1>
 
   <main>
-    <nav>
-      <ul>
-        <form action="/" method="POST">
-            <label for="login-name">Enter Your Email</label>
-            <input type="email" name="email" id="login-email">
-          <br>
-            <label for="login-password">Enter Your Password</label>
-            <input type="password" name="password" id="login-password" minlength="6">
-          <br>
-            <button type="submit">Login to Dashboard</button>
-        </form>
-
-        <li>
-          <p>Not a user? <a href="/user/new">Sign Up</a></p>
-        </li>
-      </ul>
-    </nav>
+    <form action="/user/login" method="POST">
+      <div>
+        <label for="name">Enter Your Name</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div>
+        <label for="password">Enter Your Password</label>
+        <input type="password" name="password" id="password" minlength="4">
+      </div>
+      <button type="submit">Login to Dashboard</button>
+    </form>
+    <p>Not a user? <a href="/user/new">Sign Up</a></p>
   </main>
 
 </body>

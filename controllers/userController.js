@@ -14,12 +14,24 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
   console.log('New User Created');
   db.User.create(req.body, (err, userCreated) => {
-    if (err) {
-      console.log(err);
-    }
+    if(err) console.log(err);
     res.redirect('/');
   });
 });
+
+// POST to check login creditionals
+router.post('/login', (req, res) => {
+  db.User.findOne({name: req.body.name}, (err, foundUser) => {
+    if(err) console.log(err);
+    if(!foundUser) {
+      return res.render('index');
+    }
+    if(foundUser.password === req.body.password) {
+      return res.redirect(`/user/${foundUser._id}`);
+    }
+    res.render('index');
+  })
+})
 
 // POST ROUTE to handle User Login Form
 // router.post('/', (req, res) => {

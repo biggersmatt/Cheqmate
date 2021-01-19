@@ -5,7 +5,7 @@ const app = express();
 const PORT = 4000;
 const userController = require('./controllers/userController');
 const ticketController = require('./controllers/ticketController');
-require('./database');
+const db =require('./database');
 
 
 // VIEW ENGINE
