@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <title>Cheqmate</title>
 </head>
 <body>
-  <h1>Cheqmate</h1>
-
-  <main>
-    <nav>
-      <ul>
-        <form action="/user/login" method="POST">
-          <label for="login-name">Enter Your Email</label>
-          <input type="email" name="email" id="login-email">
-        <br>
-          <label for="login-password">Enter Your Password</label>
-          <input type="password" name="password" id="login-password" minlength="6">
-        <br>
-          <button type="submit">Login to Dashboard</button>
+    <main id="login-container">
+      <img id="login-logo" src="images/logo.png" alt="logo">
+      <form action="/user/login" method="POST">
+        <ul class="login-form" >
+          <li>
+            <input type="email" name="email" id="login-email" placeholder="Email">
+          </li>
+          <li>
+            <input type="password" name="password" id="login-password" minlength="6" placeholder="Password">
+          </li>
+          <li>
+            <button type="submit">Login</button>
+          </li>
+        </ul>
       </form>
-          <p>Not a user? <a href="/user/new">Sign Up</a></p>
-        </li>
-      </ul>
-    </nav>
-  </main>
-
+      <p>Not a user? <a href="/user/new">Sign Up</a></p>
+    </main>
 </body>
 </html>

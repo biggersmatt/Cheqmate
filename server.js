@@ -5,8 +5,8 @@ const app = express();
 const PORT = 4000;
 const userController = require('./controllers/userController');
 const ticketController = require('./controllers/ticketController');
-const db =require('./database');
 
+app.use(express.static(`${__dirname}/public`));
 
 // VIEW ENGINE
 app.set('view engine', 'ejs');
