@@ -15,15 +15,11 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--green);
 }
 
 a:visited {
     text-decoration: none;
-}
-
-a:hover {
-    color: var(--green);
+    color: inherit;
 }
 
 /* Login */
@@ -54,4 +50,23 @@ a:hover {
 
 .login-form li {
     margin: 5px 0;
+}
+
+.login-form li button {
+    cursor: pointer;
+}
+
+#login-signup {
+    color: var(--green);
+}
+
+
+/* Sign Up */
+.signup-btn {
+    display:flex;
+    justify-content: space-around;
+}
+
+.signup-btn button {
+    cursor: pointer;
 }
