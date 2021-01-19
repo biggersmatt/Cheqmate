@@ -17,12 +17,14 @@ router.post('/', (req, res) => {
     if (err) {
       console.log(err);
     }
+    if (!userCreated) {
+      return res.redirect('/user/new');
+    }
     res.redirect('/');
   });
 });
 
 // POST ROUTE to handle User Login Form
-
 router.post('/login', (req, res) => {
   db.User.findOne({email: req.body.email}, (err, foundUser) => {
     if (err) {
