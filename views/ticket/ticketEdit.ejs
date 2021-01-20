@@ -3,50 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/dashboard.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/90405cb4a8.js" crossorigin="anonymous"></script>
   <title>Cheqmate</title>
 </head>
 <body>
-  <h1>Edit Ticket</h1>
+  <header>
+    <img src="/images/logo.png" alt="logo">
+    <h3>Welcome Joey</h3>
+    <nav>
+      <a href="/">Logout</a> |
+      <a href="/"><i class="fas fa-user"></i>Profile</a>
+    </nav>
+  </header>
 
   <main>
-    <form action="/user/:id/ticket/<%= ticket._id %>?_method=PUT" method="POST">
-      <ul>
-        <li>
-          <label for="title">Ticket Title:</label>
-          <input type="text" id="title" name="title" value="<%= ticket.title %>">
-        </li>
-        <li>
-          <label for="developer">Assigned Developer:</label>
-          <input type="text" id="developer" name="developer" value="<%= ticket.developer %>">
-        </li>
-        <li>
-          <label for="project">Project:</label>
-          <input type="text" id="project" name="project" value="<%= ticket.project %>">
-        </li>
-        <li>
-          <label for="status">Ticket Status:</label>
-          <input type="text" id="status" name="status" value="<%= ticket.status %>">
-        </li>
-        <li>
-          <label for="dueDate">Due Date:</label>
-          <input type="date" id="dueDate" name="dueDate" value="<%= ticket.dueDate %>">
-        </li>
-        <li>
-          <label for="description">Ticket Description:</label>
-          <input type="text" id="description" name="description" value="<%= ticket.description %>">
-        </li>
-        <li>
-          <label for="submitted">Submitted:</label>
-          <input type="checkbox" id="submitted" name="submitted" value="<%= ticket.submitted %>">
-        </li>
-        <li>
-          <label for="priority">Ticket Priority:</label>
-          <input type="text" id="priority" name="priority" value="<%= ticket.priority %>">
-        </li>
-      </ul>
-      <button type="submit">Submit Ticket</button>
-    </form>
-  </main>
+    <div class="dashboard-admin">
+      <div class="admin-buttons">
+        <i class="fas fa-home"></i>
+        <a href="/user/:id">Dashboard</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-ticket-alt"></i>
+        <a href="/user/:id/ticket/new">New Ticket</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-users"></i>
+        <a href="/">Users</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-clipboard-list"></i>
+        <a href="/">Projects</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-tasks"></i>
+        <a href="/">My Tickets</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-project-diagram"></i>
+        <a href="/">My Projects</a>
+      </div>
+    </div>
+
+    <div class="dashboard-alltickets">
+        <form action="/user/:id/ticket/<%= ticket._id %>?_method=PUT" method="POST">
+          <div class="ticket-show">
+            <div class="left-side">
+            <ul>
+              <li>
+                <h3>Ticket Title</h3> 
+                <input type="text" id="title" name="title" value="<%= ticket.title %>">
+              </li>
+              <li>
+                <h3>Assigned Developer</h3> 
+                <input type="text" id="developer" name="developer" value="<%= ticket.developer %>"> 
+              </li>
+              <li>
+                <h3>Project</h3>
+                <input type="text" id="project" name="project" value="<%= ticket.project %>">
+              </li>
+              <li>
+                <h3>Ticket Status</h3>
+                <input type="text" id="status" name="status" value="<%= ticket.status %>">
+              </li>
+            </ul>
+          </div>
+          <div class="right-side">
+            <ul>
+              <li>
+                <h3>Due Date</h3>
+                <input type="date" id="dueDate" name="dueDate" value="<%= ticket.dueDate %>"> 
+              </li>
+              <li>
+                <h3>Ticket Description</h3>
+                <input type="text" id="description" name="description" value="<%= ticket.description %>">
+              </li>
+              <li>
+                <h3>Submitted</h3> 
+                <!-- <p><%= ticket.submitted %></p>  -->
+                <input type="checkbox" id="submitted" name="submitted" value="<%= ticket.submitted %>">
+              </li>
+              <li>
+                <h3>Ticket Priority</h3> 
+                <input type="text" id="priority" name="priority" value="<%= ticket.priority %>">
+              </li>
+            </ul>
+            <div class="delete-edit-btn">
+            <button type="submit">Update</button>
+            </form>
+          <form method="POST" action="/user/:id/ticket/<%= ticket._id %>?_method=DELETE">
+            <button type="submit">Delete Ticket</button>
+          </form>
+        </div>
+        </div>
+      </div>
+      <div id="attachment-div">
+        <h3 class="attachment-title">Add an Attachment?</h3>
+        <form action="/">
+        <div class="attachment-buttons">
+            <input type="file" id="myFile" name="filename">
+            <button type="submit">
+            <i class="fas fa-cloud"></i> Upload File</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
 
 </body>
 </html>
