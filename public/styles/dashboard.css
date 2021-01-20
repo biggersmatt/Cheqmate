@@ -1,5 +1,6 @@
 body {
     background-color: lightblue;
+    font-family: "Montserrat", sans-serif;
 }
 
 h1 {
@@ -35,7 +36,9 @@ main {
 .dashboard-admin {
     border-right: 2px solid black;
     height: calc(100vh - 80px);
-    min-width: 120px;
+    min-width: 130px;
+    display: flex;
+    flex-direction: column;
 }
 
 .dashboard-alltickets {
@@ -49,4 +52,17 @@ main {
 
 .dashboard-completed {
     height: 50%;
+}
+
+.admin-buttons {
+    padding: 25px 0;
+    text-align: left;
+    margin: 0 5px;    
+}
+
+i {
+    height: 15px;
+    width: 15px;
+    color: black;
+    padding: 0 2px;
 }

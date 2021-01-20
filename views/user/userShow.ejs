@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/styles/dashboard.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/90405cb4a8.js" crossorigin="anonymous"></script>
   <title>Cheqmate</title>
 </head>
 <body>
@@ -21,7 +22,26 @@
   
   <main>
     <div class="dashboard-admin">
-      <a href="/user/:id/ticket/new">Create New Ticket</a>
+      <div class="admin-buttons">
+        <i class="fas fa-ticket-alt"></i>
+        <a href="/user/:id/ticket/new">New Ticket</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-users"></i>
+        <a href="/">Users</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-clipboard-list"></i>
+        <a href="/">Projects</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-tasks"></i>
+        <a href="/">My Tickets</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-project-diagram"></i>
+        <a href="/">My Projects</a>
+      </div>
     </div>
     <div class="dashboard-alltickets">
       <div class="dashboard-tickets">
