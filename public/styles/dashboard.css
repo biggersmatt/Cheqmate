@@ -13,7 +13,13 @@ h1 {
 
 a {
     text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    color: black;
 
+}
+
+button {
+    font-family: "Montserrat", sans-serif;
 }
 
 a:visited {
@@ -74,7 +80,6 @@ main {
 .admin-buttons:hover {
     background-color: #007eb9;
     border-radius: 10px;
-    height: 10px;
 }
 
 i {
@@ -120,4 +125,10 @@ p {
 
 .attachment-buttons {
     margin-top: 125px;
+}
+
+.delete-edit-btn {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
 }

@@ -90,10 +90,12 @@
               <p><%= ticket.priority %></p> 
             </li>
           </ul>
+          <div class="delete-edit-btn">
           <button><a href="/user/:id/ticket/<%= ticket._id %>/edit">Edit Ticket</a></button>
           <form method="POST" action="/user/:id/ticket/<%= ticket._id %>?_method=DELETE">
             <button type="submit">Delete Ticket</button>
           </form>
+        </div>
         </div>
       </div>
       <div id="attachment-div">
