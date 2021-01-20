@@ -48,15 +48,16 @@ main {
 .dashboard-tickets {
     border-bottom: 2px solid black;
     height: 50%;
+    border-radius: 10px;
 }
 
 .dashboard-completed {
     height: 50%;
+    border-radius: 10px;
 }
 
 .admin-buttons {
     padding: 25px 0;
-    text-align: left;
     margin: 0 5px;    
 }
 
@@ -65,4 +66,20 @@ i {
     width: 15px;
     color: black;
     padding: 0 2px;
+}
+
+.ticket-show {
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.left-side ul li {
+    padding: 10px;
+}
+
+.right-side ul li {
+    padding: 10px;
 }

@@ -3,33 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/dashboard.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/90405cb4a8.js" crossorigin="anonymous"></script>
   <title>Cheqmate</title>
 </head>
 <body>
-  <h1>Ticket Show</h1>
+  <header>
+    <img src="/images/logo.png" alt="logo">
+    <h3>Welcome Joey</h3>
+    <nav>
+      <a href="/">Logout</a> |
+      <a href="/"><i class="fas fa-user"></i>Profile</a>
+    </nav>
+  </header>
 
   <main>
-    <nav>
-      <ul>
-        <li>
-          <a href="/user/:id">Dashboard</a>
-        </li>
-    </nav>
-    <ul>
-      <li>Ticket Title: <%= ticket.title %> </li>
-      <li>Assigned Developer: <%= ticket.developer %> </li>
-      <li>Project: <%= ticket.project %> </li>
-      <li>Ticket Status: <%= ticket.status %> </li>
-      <li>Due Date: <%= ticket.dueDate %> </li>
-      <li>Ticket Description: <%= ticket.description %> </li>
-      <li>Submitted: <%= ticket.submitted %> </li>
-      <li>Ticket Priority: <%= ticket.priority %> </li>
-    </ul>
-    <button><a href="/user/:id/ticket/<%= ticket._id %>/edit">Edit Ticket</a></button>
-    <form method="POST" action="/user/:id/ticket/<%= ticket._id %>?_method=DELETE">
-      <button type="submit">Delete Ticket</button>
-    </form>
-  </main>
+    <div class="dashboard-admin">
+      <div class="admin-buttons">
+        <a href="/user/:id">Dashboard</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-ticket-alt"></i>
+        <a href="/user/:id/ticket/new">New Ticket</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-users"></i>
+        <a href="/">Users</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-clipboard-list"></i>
+        <a href="/">Projects</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-tasks"></i>
+        <a href="/">My Tickets</a>
+      </div>
+      <div class="admin-buttons">
+        <i class="fas fa-project-diagram"></i>
+        <a href="/">My Projects</a>
+      </div>
+    </div>
+
+  
+    <div class="dashboard-alltickets">
+      <div class="ticket-show">
+        <div class="left-side">
+          <ul>
+            <li>Ticket Title: <%= ticket.title %> </li>
+            <li>Assigned Developer: <%= ticket.developer %> </li>
+            <li>Project: <%= ticket.project %> </li>
+            <li>Ticket Status: <%= ticket.status %> </li>
+          </ul>
+        </div>
+        <div class="right-side">
+          <ul>
+            <li>Due Date: <%= ticket.dueDate %> </li>
+            <li>Ticket Description: <%= ticket.description %> </li>
+            <li>Submitted: <%= ticket.submitted %> </li>
+            <li>Ticket Priority: <%= ticket.priority %> </li>
+          </ul>
+          <button><a href="/user/:id/ticket/<%= ticket._id %>/edit">Edit Ticket</a></button>
+          <form method="POST" action="/user/:id/ticket/<%= ticket._id %>?_method=DELETE">
+            <button type="submit">Delete Ticket</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
 </body>
 </html>
