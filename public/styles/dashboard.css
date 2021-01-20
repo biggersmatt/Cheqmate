@@ -93,6 +93,7 @@ main {
 .admin-buttons:hover {
     background-color: #007eb9;
     border-radius: 10px;
+    margin: 0;
 }
 
 i {
