@@ -1,5 +1,9 @@
+:root {
+    --green: rgb(38,185,108);
+}
+
 body {
-    background-color: lightblue;
+    background-color: #CDCDCD;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -9,12 +13,13 @@ h1 {
 
 a {
     text-decoration: none;
-    color: blue;
+
 }
 
 a:visited {
     text-decoration: none;
-    color: blue;
+    color: black;
+
 }
 
 header {
@@ -23,6 +28,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #e47911;
 }
 
 img {
@@ -39,16 +45,20 @@ main {
     min-width: 130px;
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 
 .dashboard-alltickets {
     width: 100vw;
+    max-width: 1300px;
+  
 }
 
 .dashboard-tickets {
     border-bottom: 2px solid black;
     height: 50%;
     border-radius: 10px;
+    
 }
 
 .dashboard-completed {
@@ -61,25 +71,53 @@ main {
     margin: 0 5px;    
 }
 
+.admin-buttons:hover {
+    background-color: #007eb9;
+    border-radius: 10px;
+    height: 10px;
+}
+
 i {
     height: 15px;
     width: 15px;
-    color: black;
+    color: var(--green);
     padding: 0 2px;
 }
 
 .ticket-show {
     margin: 10px;
     border-radius: 10px;
-    border: 2px solid black;
     display: flex;
     justify-content: space-around;
+    background-color: white;
 }
 
 .left-side ul li {
     padding: 10px;
+    list-style-type: none;
 }
 
 .right-side ul li {
     padding: 10px;
+    list-style-type: none;
+}
+
+p {
+    padding-left: 10px;
+}
+
+#attachment-div {
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    height: 300px;
+    margin: 10px;
+}
+
+.attachment-title {
+    padding-left: 10px;
+}
+
+.attachment-buttons {
+    margin-top: 125px;
 }

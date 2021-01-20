@@ -22,6 +22,7 @@
   <main>
     <div class="dashboard-admin">
       <div class="admin-buttons">
+        <i class="fas fa-home"></i>
         <a href="/user/:id">Dashboard</a>
       </div>
       <div class="admin-buttons">
@@ -51,24 +52,59 @@
       <div class="ticket-show">
         <div class="left-side">
           <ul>
-            <li>Ticket Title: <%= ticket.title %> </li>
-            <li>Assigned Developer: <%= ticket.developer %> </li>
-            <li>Project: <%= ticket.project %> </li>
-            <li>Ticket Status: <%= ticket.status %> </li>
+            <li>
+              <h3>Ticket Title</h3> 
+              <p><%= ticket.title %></p> 
+            </li>
+            <li>
+              <h3>Assigned Developer</h3> 
+              <p><%= ticket.developer %></p> 
+            </li>
+            <li>
+              <h3>Project</h3>
+              <p><%= ticket.project %> </p>
+            </li>
+            <li>
+              <h3>Ticket Status</h3>
+              <p><%= ticket.status %> </p>
+            </li>
           </ul>
         </div>
         <div class="right-side">
           <ul>
-            <li>Due Date: <%= ticket.dueDate %> </li>
-            <li>Ticket Description: <%= ticket.description %> </li>
-            <li>Submitted: <%= ticket.submitted %> </li>
-            <li>Ticket Priority: <%= ticket.priority %> </li>
+            <li>
+              <h3>Due Date</h3>
+              <p><%= ticket.dueDate %></p> 
+            </li>
+            <li>
+              <h3>Ticket Description</h3>
+              <p><%= ticket.description %></p>
+            </li>
+            <li>
+              <h3>Submitted</h3> 
+              <!-- <p><%= ticket.submitted %></p>  -->
+              <p>Dummy Text</p>
+            </li>
+            <li>
+              <h3>Ticket Priority</h3> 
+              <p><%= ticket.priority %></p> 
+            </li>
           </ul>
           <button><a href="/user/:id/ticket/<%= ticket._id %>/edit">Edit Ticket</a></button>
           <form method="POST" action="/user/:id/ticket/<%= ticket._id %>?_method=DELETE">
             <button type="submit">Delete Ticket</button>
           </form>
         </div>
+      </div>
+      <div id="attachment-div">
+        <h3 class="attachment-title">Add an Attachment?</h3>
+        <form action="/">
+        <div class="attachment-buttons">
+            <input type="file" id="myFile" name="filename">
+            <button type="submit">
+            <i class="fas fa-cloud"></i> Upload File</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
