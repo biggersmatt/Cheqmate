@@ -34,7 +34,8 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: #e47911;
-    border-radius: 10px;        
+    border-radius: 10px;
+    margin-right: 10px;        
 }
 
 img {
