@@ -1,0 +1,16 @@
+body {
+    background-color: lightblue;
+}
+
+header {
+    border-bottom: 2px solid black;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+img {
+    height: 50px;
+}

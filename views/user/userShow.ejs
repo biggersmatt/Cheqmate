@@ -3,26 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/dashboard.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <title>Cheqmate</title>
 </head>
 <body>
-  <h1>Dashboard</h1>
 
   <header>
+    <img src="/images/logo.png" alt="logo">
+    <h3>Welcome Joey</h3>
     <nav>
-      <ul>
-        <li>
-          <a href="/">Login</a>
-        </li>
-        <li>
-          <a href="/user/:id/ticket/new">Create New Ticket</a>
-        </li>
-      </ul>
+      <a href="/">Logout</a> |
+      <a href="#">Profile</a>
     </nav>
   </header>
-
+  
   <main>
     <h1>List of Tickets</h1>
+    <a href="/user/:id/ticket/new">Create New Ticket</a>
     <ul>
         <% ticket.forEach((one) => { %>
             <li>
