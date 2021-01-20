@@ -15,22 +15,30 @@
     <h3>Welcome Joey</h3>
     <nav>
       <a href="/">Logout</a> |
-      <a href="#">Profile</a>
+      <a href="/">Profile</a>
     </nav>
   </header>
   
   <main>
-    <h1>List of Tickets</h1>
-    <a href="/user/:id/ticket/new">Create New Ticket</a>
-    <ul>
-        <% ticket.forEach((one) => { %>
-            <li>
-                <a href="/user/:id/ticket/<%= one._id %> "><%= one.title %></a> 
-            </li>
-        <% }) %>
-    </ul>
-</main>
-
+    <div class="dashboard-admin">
+      <a href="/user/:id/ticket/new">Create New Ticket</a>
+    </div>
+    <div class="dashboard-alltickets">
+      <div class="dashboard-tickets">
+        <h1>List of Tickets</h1>
+        <ul>
+            <% ticket.forEach((one) => { %>
+                <li>
+                    <a href="/user/:id/ticket/<%= one._id %> "><%= one.title %></a> 
+                </li>
+            <% }) %>
+        </ul>
+      </div>
+      <div class="dashboard-completed">
+        <h1>Completed</h1>
+      </div>
+    </div>
+  </main>
 
 </body>
 </html>

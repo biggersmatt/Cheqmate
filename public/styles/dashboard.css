@@ -2,15 +2,51 @@ body {
     background-color: lightblue;
 }
 
+h1 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:visited {
+    text-decoration: none;
+    color: blue;
+}
+
 header {
     border-bottom: 2px solid black;
     padding: 0 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 img {
     height: 50px;
+}
+
+main {
+    display: flex;
+}
+
+.dashboard-admin {
+    border-right: 2px solid black;
+    height: calc(100vh - 80px);
+    min-width: 120px;
+}
+
+.dashboard-alltickets {
+    width: 100vw;
+}
+
+.dashboard-tickets {
+    border-bottom: 2px solid black;
+    height: 50%;
+}
+
+.dashboard-completed {
+    height: 50%;
 }
