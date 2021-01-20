@@ -50,7 +50,9 @@
             <% ticket.forEach((one) => { %>
                 <li>
                     <a href="/user/:id/ticket/<%= one._id %> "><%= one.title %></a> 
-                </li>
+                    <p><%= one.developer %></p>
+                    <p><%= one.status %></p>
+                  </li>
             <% }) %>
         </ul>
       </div>

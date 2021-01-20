@@ -74,7 +74,7 @@
           <ul>
             <li>
               <h3>Due Date</h3>
-              <p><%= ticket.dueDate %></p> 
+              <p><%= new Date(ticket.dueDate).toLocaleDateString() %></p> 
             </li>
             <li>
               <h3>Ticket Description</h3>

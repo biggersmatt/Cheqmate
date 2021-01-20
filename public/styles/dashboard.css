@@ -35,7 +35,8 @@ header {
     justify-content: space-between;
     background-color: #e47911;
     border-radius: 10px;
-    margin-right: 10px;        
+    margin-right: 10px;
+    border: 1px solid black;        
 }
 
 img {
@@ -54,6 +55,7 @@ main {
     background-color: white;
     border-radius: 10px;
     margin-top: 10px;
+    border: 1px solid black;
 }
 
 .dashboard-alltickets {
@@ -64,11 +66,13 @@ main {
 .tickets-open {
     padding-left: 10px;
     margin: 0;
+    border-bottom: 2px solid black;
 }
 
 .completed-tickets {
     padding-left: 10px;
     margin: 0;
+    border-bottom: 2px solid black;
 }
 
 .dashboard-tickets {
@@ -76,6 +80,19 @@ main {
     border-radius: 10px;
     background-color: white;
     margin: 10px; 
+    border: 1px solid black;    
+}
+
+.dashboard-tickets ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.dashboard-tickets ul p {
+    margin: 0;
+    text-align: center;
 }
 
 .dashboard-completed {
@@ -83,6 +100,7 @@ main {
     border-radius: 10px;
     background-color: white;
     margin: 10px;
+    border: 1px solid black;
 }
 
 .admin-buttons {
