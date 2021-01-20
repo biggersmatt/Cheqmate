@@ -93,9 +93,7 @@
             <div class="delete-edit-btn">
             <button type="submit">Update</button>
             </form>
-          <form method="POST" action="/user/:id/ticket/<%= ticket._id %>?_method=DELETE">
-            <button type="submit">Delete Ticket</button>
-          </form>
+            <button><a href="/user/:id/ticket/<%= ticket._id %> ">Cancel</a></button>
         </div>
         </div>
       </div>
