@@ -29,12 +29,12 @@ a:visited {
 }
 
 header {
-    border-bottom: 2px solid black;
     padding: 0 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #e47911;
+    border-radius: 10px;        
 }
 
 img {
@@ -46,18 +46,18 @@ main {
 }
 
 .dashboard-admin {
-    border-right: 2px solid black;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 90px);
     min-width: 130px;
     display: flex;
     flex-direction: column;
     background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 .dashboard-alltickets {
     width: 100vw;
     max-width: 1300px;
-  
 }
 
 .dashboard-tickets {
@@ -95,6 +95,7 @@ i {
     display: flex;
     justify-content: space-around;
     background-color: white;
+    height: 73%;
 }
 
 .left-side ul li {
@@ -115,7 +116,7 @@ p {
     border-radius: 10px;
     background-color: white;
     display: flex;
-    height: 300px;
+    height: 24.6%;
     margin: 10px;
 }
 
