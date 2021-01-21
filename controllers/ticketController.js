@@ -82,9 +82,8 @@ router.put('/:id/ticket/:ticketId', (req, res) => {
   db.Ticket.findByIdAndUpdate(ticketId, updatedTicketObj, 
     {new: true}, 
     (err, updatedTicket) => {
-      if (err) {
-        res.send(err);
-      }
+      if(err)res.send(err);
+
       res.redirect(`./${ticketId}`);
     });
 });
