@@ -7,10 +7,8 @@ const db = require('../database');
 // GET new ticket
 router.get('/:id/ticket/new', (req, res) => {
     const context = {
-      url: req.originalUrl,
       userId: req.params.id,
     }
-    console.log(context);
     res.render('./ticket/ticketNew', context);
   });
 
@@ -20,7 +18,6 @@ router.post('/:id/ticket', (req, res) => {
   console.log('New Ticket Created')
   db.Ticket.create(req.body, (err, newTicket) => {
     if(err) console.log(err);
-    console.log(req.params.id);
     db.User.findById(req.params.id, (err, foundUser) => {
       if (err) console.log(err);
       foundUser.tickets.push(newTicket);
@@ -52,7 +49,6 @@ router.get('/:id/ticket/:ticketId', (req, res) => {
 router.get('/:id/ticket/:ticketId/edit', (req, res) => {
   const ticketId = req.params.ticketId;
   db.Ticket.findById(ticketId, (err, foundTicket) => {
-    console.log(req.body)
     if(err) console.log(err);
     db.User.findById(req.params.id, (err, foundUser) => {
       if (err) console.log(err);

@@ -10,10 +10,8 @@ var db = require('../database'); // Current route '/user/:id/ticket'
 
 router.get('/:id/ticket/new', function (req, res) {
   var context = {
-    url: req.originalUrl,
     userId: req.params.id
   };
-  console.log(context);
   res.render('./ticket/ticketNew', context);
 }); // POST new ticket to database
 
@@ -21,7 +19,6 @@ router.post('/:id/ticket', function (req, res) {
   console.log('New Ticket Created');
   db.Ticket.create(req.body, function (err, newTicket) {
     if (err) console.log(err);
-    console.log(req.params.id);
     db.User.findById(req.params.id, function (err, foundUser) {
       if (err) console.log(err);
       foundUser.tickets.push(newTicket);
@@ -51,7 +48,6 @@ router.get('/:id/ticket/:ticketId', function (req, res) {
 router.get('/:id/ticket/:ticketId/edit', function (req, res) {
   var ticketId = req.params.ticketId;
   db.Ticket.findById(ticketId, function (err, foundTicket) {
-    console.log(req.body);
     if (err) console.log(err);
     db.User.findById(req.params.id, function (err, foundUser) {
       if (err) console.log(err);
@@ -79,10 +75,7 @@ router.put('/:id/ticket/:ticketId', function (req, res) {
   db.Ticket.findByIdAndUpdate(ticketId, updatedTicketObj, {
     "new": true
   }, function (err, updatedTicket) {
-    if (err) {
-      res.send(err);
-    }
-
+    if (err) res.send(err);
     res.redirect("./".concat(ticketId));
   });
 }); // DELETE ROUTE AND REDIRECT TO USER HOME
