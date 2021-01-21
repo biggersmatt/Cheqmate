@@ -37,11 +37,14 @@ router.get('/:id/ticket/:ticketId', function (req, res) {
   var ticketId = req.params.ticketId;
   db.Ticket.findById(ticketId, function (err, foundTicket) {
     if (err) console.log(err);
-    var context = {
-      ticket: foundTicket,
-      url: req.originalUrl
-    };
-    res.render('./ticket/ticketShow', context);
+    db.User.findById(req.params.id, function (err, foundUser) {
+      if (err) console.log(err);
+      var context = {
+        ticket: foundTicket,
+        user: foundUser
+      };
+      res.render('./ticket/ticketShow', context);
+    });
   });
 }); // GET edit ticket
 
@@ -50,10 +53,14 @@ router.get('/:id/ticket/:ticketId/edit', function (req, res) {
   db.Ticket.findById(ticketId, function (err, foundTicket) {
     console.log(req.body);
     if (err) console.log(err);
-    var context = {
-      ticket: foundTicket
-    };
-    res.render('./ticket/ticketEdit', context);
+    db.User.findById(req.params.id, function (err, foundUser) {
+      if (err) console.log(err);
+      var context = {
+        ticket: foundTicket,
+        user: foundUser
+      };
+      res.render('./ticket/ticketEdit', context);
+    });
   });
 }); // PUT ROUTE TO UPDATE TICKET
 

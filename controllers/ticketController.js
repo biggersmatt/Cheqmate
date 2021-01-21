@@ -37,11 +37,14 @@ router.get('/:id/ticket/:ticketId', (req, res) => {
   const ticketId = req.params.ticketId;
   db.Ticket.findById(ticketId, (err, foundTicket) => {
     if (err) console.log(err);
-    const context = {
-      ticket: foundTicket,
-      url: req.originalUrl,
-    }
-    res.render('./ticket/ticketShow', context)
+    db.User.findById(req.params.id, (err, foundUser) => {
+      if (err) console.log(err);
+      const context = {
+        ticket: foundTicket,
+        user: foundUser
+      }
+      res.render('./ticket/ticketShow', context);
+    });
   });
 });
 
@@ -51,10 +54,14 @@ router.get('/:id/ticket/:ticketId/edit', (req, res) => {
   db.Ticket.findById(ticketId, (err, foundTicket) => {
     console.log(req.body)
     if(err) console.log(err);
-    const context = {
-      ticket: foundTicket,
-    }
+    db.User.findById(req.params.id, (err, foundUser) => {
+      if (err) console.log(err);
+      const context = {
+        ticket: foundTicket,
+        user: foundUser
+      }
     res.render('./ticket/ticketEdit', context);
+    });
   });
 });
 
