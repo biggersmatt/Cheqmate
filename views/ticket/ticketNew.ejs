@@ -22,7 +22,7 @@
     <div class="dashboard-admin">
       <div class="admin-buttons">
         <i class="fas fa-home"></i>
-        <a href="<%= url.slice(0, 30) %>">Dashboard</a>
+        <a href="<%= url.slice(0,30) %>">Dashboard</a>
       </div>
       <div class="admin-buttons">
         <i class="fas fa-ticket-alt"></i>
@@ -47,7 +47,7 @@
     </div>
 
     <div class="dashboard-alltickets">
-        <form action="/user/:id/ticket" method="POST">
+        <form action="/user/<%= user._id %>/ticket" method="POST">
           <div class="ticket-show">
             <div class="left-side">
             <ul>

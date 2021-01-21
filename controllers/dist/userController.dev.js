@@ -49,16 +49,12 @@ router.post('/login', function (req, res) {
 }); // GET user show dashboard
 
 router.get('/:id', function (req, res) {
-  db.Ticket.find({}, function (err, allTickets) {
+  db.User.findById(req.params.id).populate('tickets').exec(function (err, foundUser) {
     if (err) console.log(err);
-    db.User.findById(req.params.id, function (err, foundUser) {
-      if (err) console.log(err);
-      var context = {
-        ticket: allTickets,
-        user: foundUser
-      };
-      res.render('./user/userShow', context);
-    });
+    var context = {
+      user: foundUser
+    };
+    res.render('./user/userShow', context);
   });
 });
 module.exports = router;

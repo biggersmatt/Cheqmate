@@ -25,7 +25,7 @@ router.post('/', function (req, res) {
       foundUser.tickets.push(newTicket);
       foundUser.save(function (err, savedUser) {
         if (err) console.log(err);
-        res.redirect('/user/:id');
+        res.redirect("/user/".concat(savedUser._id));
       });
     });
   });
@@ -35,9 +35,11 @@ router.get('/:id', function (req, res) {
   var ticketId = req.params.id;
   db.Ticket.findById(ticketId, function (err, foundTicket) {
     if (err) console.log(err);
-    res.render('./ticket/ticketShow', {
-      ticket: foundTicket
-    });
+    var context = {
+      ticket: foundTicket,
+      url: req.originalUrl
+    };
+    res.render('./ticket/ticketShow', context);
   });
 }); // GET edit ticket
 

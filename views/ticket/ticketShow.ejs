@@ -22,11 +22,11 @@
     <div class="dashboard-admin">
       <div class="admin-buttons">
         <i class="fas fa-home"></i>
-        <a href="/user/:id">Dashboard</a>
+        <a href="<%= url.slice(0,30) %>">Dashboard</a>
       </div>
       <div class="admin-buttons">
         <i class="fas fa-ticket-alt"></i>
-        <a href="/user/:id/ticket/new">New Ticket</a>
+        <a href="<%= url.slice(0,30) %>/ticket/new">New Ticket</a>
       </div>
       <div class="admin-buttons">
         <i class="fas fa-users"></i>
@@ -90,8 +90,8 @@
             </li>
           </ul>
           <div class="delete-edit-btn">
-          <button><a href="/user/:id/ticket/<%= ticket._id %>/edit">Edit Ticket</a></button>
-          <form method="POST" action="/user/:id/ticket/<%= ticket._id %>?_method=DELETE">
+          <button><a href="<%= url.slice(0,30) %>/ticket/<%= ticket._id %>/edit">Edit Ticket</a></button>
+          <form method="POST" action="<%= url.slice(0,30) %>/ticket/<%= ticket._id %>?_method=DELETE">
             <button type="submit">Delete Ticket</button>
           </form>
         </div>

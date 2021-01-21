@@ -17,10 +17,10 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  tickets: {
+  tickets: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Ticket'
-  }
+  }]
 });
 var User = mongoose.model('User', userSchema);
 module.exports = User;

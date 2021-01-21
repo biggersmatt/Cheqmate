@@ -47,13 +47,13 @@
       <div class="dashboard-tickets">
         <h2 class="tickets-open">Tickets</h2>
         <ul>
-            <% ticket.forEach((one) => { %>
+            <% user.tickets.forEach((one) => { %>
                 <li>
-                    <a href="/user/:id/ticket/<%= one._id %> "><%= one.title %></a> 
+                    <a href="/user/<%= user._id %>/ticket/<%= one._id %>"><%= one.title %></a> 
                     <p><%= one.developer %></p>
                     <p><%= one.status %></p>
                   </li>
-            <% }) %>
+            <% }); %>
         </ul>
       </div>
       <div class="dashboard-completed">
