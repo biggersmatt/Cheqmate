@@ -6,7 +6,14 @@ const db = require('../database');
 
 // GET new ticket
 router.get('/new', (req, res) => {
-  res.render('./ticket/ticketNew');
+  db.User.findById(req.params.id, (err, foundUser) => {
+    if (err) console.log(err);
+    const context = {
+      user: foundUser
+    }
+    res.render('./ticket/ticketNew', context);
+  });
+ 
 });
 
 // POST new ticket to database

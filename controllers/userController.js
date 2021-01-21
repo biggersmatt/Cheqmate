@@ -45,10 +45,14 @@ router.post('/login', (req, res) => {
 router.get('/:id', (req, res) => {
   db.Ticket.find({}, (err, allTickets) => {
     if(err) console.log(err);
-    const context = {
-      ticket: allTickets,
-    }
-    res.render('./user/userShow', context);
+    db.User.findById(req.params.id, (err, foundUser) => {
+      if(err) console.log(err);
+      const context = {
+        ticket: allTickets,
+        user: foundUser,
+      }
+      res.render('./user/userShow', context);
+    });
   })
 });
 
