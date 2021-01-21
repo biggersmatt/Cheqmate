@@ -94,7 +94,7 @@ router["delete"]('/:id/ticket/:ticketId', function (req, res) {
       res.send(err);
     }
 
-    res.redirect('/user/:id');
+    res.redirect("/user/".concat(req.params.id));
   });
 });
 module.exports = router;

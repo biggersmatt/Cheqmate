@@ -96,7 +96,7 @@ router.delete('/:id/ticket/:ticketId', (req, res) => {
     if(err) {
       res.send(err);
     }
-    res.redirect('/user/:id');
+    res.redirect(`/user/${req.params.id}`);
   });
 });
 
