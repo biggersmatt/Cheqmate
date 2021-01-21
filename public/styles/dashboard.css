@@ -61,6 +61,7 @@ main {
 .dashboard-alltickets {
     width: 100vw;
     max-width: 1300px;
+
 }
 
 .tickets-open {
@@ -129,6 +130,7 @@ i {
     justify-content: space-around;
     background-color: white;
     height: 73%;
+    border: 1px solid black;
 }
 
 .left-side ul li {
@@ -151,6 +153,7 @@ p {
     display: flex;
     height: 24.6%;
     margin: 10px;
+    border: 1px solid black;
 }
 
 .attachment-title {
