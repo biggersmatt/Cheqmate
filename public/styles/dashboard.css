@@ -89,6 +89,12 @@ main {
     justify-content: space-between;
     padding: 10px;
     border-bottom: 1px solid gray;
+    
+}
+
+.dashboard-tickets ul li:hover {
+    background-color: #e47911;
+    border-radius: 5px;
 }
 
 .dashboard-tickets ul li p {
@@ -111,7 +117,7 @@ main {
 }
 
 .admin-buttons:hover {
-    background-color: #007eb9;
+    background-color:#e47911;
     border-radius: 10px;
     margin: 0;
 }
