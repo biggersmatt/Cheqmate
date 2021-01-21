@@ -8,19 +8,21 @@ var db = require('../database'); // Current route '/user/:id/ticket'
 // GET new ticket
 
 
-router.get('/new', function (req, res) {
+router.get('/:id/ticket/new', function (req, res) {
   var context = {
-    url: req.originalUrl
+    url: req.originalUrl,
+    userId: req.params.id
   };
+  console.log(context);
   res.render('./ticket/ticketNew', context);
 }); // POST new ticket to database
 
-router.post('/', function (req, res) {
+router.post('/:id/ticket', function (req, res) {
   console.log('New Ticket Created');
   db.Ticket.create(req.body, function (err, newTicket) {
     if (err) console.log(err);
-    console.log(req.params.userId);
-    db.User.findById(req.params.userId, function (err, foundUser) {
+    console.log(req.params.id);
+    db.User.findById(req.params.id, function (err, foundUser) {
       if (err) console.log(err);
       foundUser.tickets.push(newTicket);
       foundUser.save(function (err, savedUser) {
@@ -31,8 +33,8 @@ router.post('/', function (req, res) {
   });
 }); // GET show ticket
 
-router.get('/:id', function (req, res) {
-  var ticketId = req.params.id;
+router.get('/:id/ticket/:ticketId', function (req, res) {
+  var ticketId = req.params.ticketId;
   db.Ticket.findById(ticketId, function (err, foundTicket) {
     if (err) console.log(err);
     var context = {
@@ -43,8 +45,8 @@ router.get('/:id', function (req, res) {
   });
 }); // GET edit ticket
 
-router.get('/:id/edit', function (req, res) {
-  var ticketId = req.params.id;
+router.get('/:id/ticket/:ticketId/edit', function (req, res) {
+  var ticketId = req.params.ticketId;
   db.Ticket.findById(ticketId, function (err, foundTicket) {
     console.log(req.body);
     if (err) console.log(err);
@@ -55,8 +57,8 @@ router.get('/:id/edit', function (req, res) {
   });
 }); // PUT ROUTE TO UPDATE TICKET
 
-router.put('/:id', function (req, res) {
-  var ticketId = req.params.id;
+router.put('/:id/ticket/:ticketId', function (req, res) {
+  var ticketId = req.params.ticketId;
   var updatedTicketObj = {
     title: req.body.title,
     developer: req.body.developer,
@@ -78,8 +80,8 @@ router.put('/:id', function (req, res) {
   });
 }); // DELETE ROUTE AND REDIRECT TO USER HOME
 
-router["delete"]('/:id', function (req, res) {
-  var ticketId = req.params.id;
+router["delete"]('/:id/ticket/:ticketId', function (req, res) {
+  var ticketId = req.params.ticketId;
   db.Ticket.findByIdAndDelete(ticketId, function (err, deletedTicket) {
     if (err) {
       res.send(err);

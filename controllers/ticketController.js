@@ -5,21 +5,23 @@ const db = require('../database');
 // Current route '/user/:id/ticket'
 
 // GET new ticket
-router.get('/new', (req, res) => {
+router.get('/:id/ticket/new', (req, res) => {
     const context = {
       url: req.originalUrl,
+      userId: req.params.id,
     }
+    console.log(context);
     res.render('./ticket/ticketNew', context);
   });
 
 
 // POST new ticket to database
-router.post('/', (req, res) => {
+router.post('/:id/ticket', (req, res) => {
   console.log('New Ticket Created')
   db.Ticket.create(req.body, (err, newTicket) => {
     if(err) console.log(err);
-    console.log(req.params.userId);
-    db.User.findById(req.params.userId, (err, foundUser) => {
+    console.log(req.params.id);
+    db.User.findById(req.params.id, (err, foundUser) => {
       if (err) console.log(err);
       foundUser.tickets.push(newTicket);
       foundUser.save((err, savedUser) => {
@@ -31,8 +33,8 @@ router.post('/', (req, res) => {
 });
 
 // GET show ticket
-router.get('/:id', (req, res) => {
-  const ticketId = req.params.id;
+router.get('/:id/ticket/:ticketId', (req, res) => {
+  const ticketId = req.params.ticketId;
   db.Ticket.findById(ticketId, (err, foundTicket) => {
     if (err) console.log(err);
     const context = {
@@ -44,8 +46,8 @@ router.get('/:id', (req, res) => {
 });
 
 // GET edit ticket
-router.get('/:id/edit', (req, res) => {
-  const ticketId = req.params.id;
+router.get('/:id/ticket/:ticketId/edit', (req, res) => {
+  const ticketId = req.params.ticketId;
   db.Ticket.findById(ticketId, (err, foundTicket) => {
     console.log(req.body)
     if(err) console.log(err);
@@ -57,8 +59,8 @@ router.get('/:id/edit', (req, res) => {
 });
 
 // PUT ROUTE TO UPDATE TICKET
-router.put('/:id', (req, res) => {
-  const ticketId = req.params.id;
+router.put('/:id/ticket/:ticketId', (req, res) => {
+  const ticketId = req.params.ticketId;
   const updatedTicketObj = {
     title: req.body.title,
     developer: req.body.developer,
@@ -81,8 +83,8 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE ROUTE AND REDIRECT TO USER HOME
-router.delete('/:id', (req, res) => {
-  const ticketId = req.params.id;
+router.delete('/:id/ticket/:ticketId', (req, res) => {
+  const ticketId = req.params.ticketId;
   db.Ticket.findByIdAndDelete(ticketId, (err, deletedTicket) => {
     if(err) {
       res.send(err);
