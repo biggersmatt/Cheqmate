@@ -15,9 +15,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // isAdmin: {
-  //   type: Boolean,
-  // },
+  tickets: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Ticket',
+  }
 });
 
 const User = mongoose.model('User', userSchema);

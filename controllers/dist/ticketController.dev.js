@@ -9,20 +9,25 @@ var db = require('../database'); // Current route '/user/:id/ticket'
 
 
 router.get('/new', function (req, res) {
-  db.User.findById(req.params.id, function (err, foundUser) {
-    if (err) console.log(err);
-    var context = {
-      user: foundUser
-    };
-    res.render('./ticket/ticketNew', context);
-  });
+  var context = {
+    url: req.originalUrl
+  };
+  res.render('./ticket/ticketNew', context);
 }); // POST new ticket to database
 
 router.post('/', function (req, res) {
   console.log('New Ticket Created');
   db.Ticket.create(req.body, function (err, newTicket) {
     if (err) console.log(err);
-    res.redirect('/user/:id');
+    console.log(req.params.userId);
+    db.User.findById(req.params.userId, function (err, foundUser) {
+      if (err) console.log(err);
+      foundUser.tickets.push(newTicket);
+      foundUser.save(function (err, savedUser) {
+        if (err) console.log(err);
+        res.redirect('/user/:id');
+      });
+    });
   });
 }); // GET show ticket
 

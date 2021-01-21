@@ -6,24 +6,29 @@ const db = require('../database');
 
 // GET new ticket
 router.get('/new', (req, res) => {
-  db.User.findById(req.params.id, (err, foundUser) => {
-    if (err) console.log(err);
     const context = {
-      user: foundUser
+      url: req.originalUrl,
     }
     res.render('./ticket/ticketNew', context);
   });
- 
-});
+
 
 // POST new ticket to database
 router.post('/', (req, res) => {
   console.log('New Ticket Created')
   db.Ticket.create(req.body, (err, newTicket) => {
     if(err) console.log(err);
-    res.redirect('/user/:id');
-  })
-})
+    console.log(req.params.userId);
+    db.User.findById(req.params.userId, (err, foundUser) => {
+      if (err) console.log(err);
+      foundUser.tickets.push(newTicket);
+      foundUser.save((err, savedUser) => {
+        if (err) console.log(err);
+        res.redirect('/user/:id');
+      });
+    });
+  });
+});
 
 // GET show ticket
 router.get('/:id', (req, res) => {
