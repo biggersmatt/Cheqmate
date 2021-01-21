@@ -61,7 +61,7 @@ main {
 .dashboard-alltickets {
     width: 100vw;
     max-width: 1300px;
-
+    height: calc(100vh - 90px);
 }
 
 .tickets-open {
@@ -131,7 +131,9 @@ i {
     background-color: white;
     height: 73%;
     border: 1px solid black;
+    overflow: hidden;
 }
+
 
 .left-side ul li {
     padding: 10px;
@@ -151,7 +153,7 @@ p {
     border-radius: 10px;
     background-color: white;
     display: flex;
-    height: 24.2%;
+    height: 25%;
     margin: 10px;
     border: 1px solid black;
 }
@@ -168,4 +170,8 @@ p {
     display: flex;
     margin-bottom: 10px;
     justify-content: space-evenly;
+}
+
+footer {
+    text-align: center;
 }

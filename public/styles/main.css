@@ -72,4 +72,18 @@ a:visited {
 
 .signup-btn button {
     cursor: pointer;
+    width: 73px;
+    font-family: "Montserrat", sans-serif;
+    background-color: #146eb4;
+    color: white;
+    border-radius: 6px;
+    margin: 0 5px;
+}
+
+#login-button {
+    width: 125px;
+    font-family: "Montserrat", sans-serif;
+    background-color: #146eb4;
+    color: white;
+    border-radius: 6px;
 }
