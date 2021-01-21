@@ -62,7 +62,11 @@
               </li>
               <li>
                 <h3>Ticket Status</h3>
-                <input type="text" id="status" name="status">
+                <select name="status" id="status">
+                  <option value="Open">Open</option>
+                  <option value="In-Progress">In-Progress</option>
+                  <option value="Complete">Complete</option>
+                </select>
               </li>
             </ul>
           </div>
@@ -78,11 +82,18 @@
               </li>
               <li>
                 <h3>Submitted</h3> 
-                <input type="checkbox" id="submitted" name="submitted">
+                <select name="submitted" id="submitted">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
               </li>
               <li>
                 <h3>Ticket Priority</h3> 
-                <input type="text" id="priority" name="priority">
+                <select name="priority" id="priority">
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
               </li>
             </ul>
             <div class="delete-edit-btn">

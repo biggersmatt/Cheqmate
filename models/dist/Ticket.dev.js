@@ -27,9 +27,9 @@ var ticketSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  // submitted: {
-  //   type: Boolean,
-  // },
+  submitted: {
+    type: String
+  },
   priority: {
     type: String,
     required: true

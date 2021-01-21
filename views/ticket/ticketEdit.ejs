@@ -66,7 +66,11 @@
               </li>
               <li>
                 <h3>Ticket Status</h3>
-                <input type="text" id="status" name="status" value="<%= ticket.status %>">
+                <select name="status" id="status" value="<%= ticket.status %>">
+                  <option value="Open">Open</option>
+                  <option value="In-Progress">In-Progress</option>
+                  <option value="Complete">Complete</option>
+                </select>
               </li>
             </ul>
           </div>
@@ -82,12 +86,18 @@
               </li>
               <li>
                 <h3>Submitted</h3> 
-                <!-- <p><%= ticket.submitted %></p>  -->
-                <input type="checkbox" id="submitted" name="submitted" value="<%= ticket.submitted %>">
+                <select name="submitted" id="submitted" value="<%= ticket.submitted %>">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
               </li>
               <li>
                 <h3>Ticket Priority</h3> 
-                <input type="text" id="priority" name="priority" value="<%= ticket.priority %>">
+                <select name="priority" id="priority" value="<%= ticket.priority %>">
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
               </li>
             </ul>
             <div class="delete-edit-btn">
