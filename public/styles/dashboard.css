@@ -61,7 +61,7 @@ main {
 .dashboard-alltickets {
     width: 100vw;
     max-width: 1300px;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 85px);
 }
 
 .tickets-open {
@@ -88,6 +88,7 @@ main {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    margin-right: 40px;
     border-bottom: 1px solid gray;
     
 }
@@ -98,6 +99,26 @@ main {
 }
 
 .dashboard-tickets ul li p {
+    margin: 0 5px;
+    justify-content: center;
+    padding-right: 5px;
+}
+
+.dashboard-completed ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-right: 40px;
+    border-bottom: 1px solid gray;
+    
+}
+
+.dashboard-completed ul li:hover {
+    background-color: #e47911;
+    border-radius: 5px;
+}
+
+.dashboard-completed ul li p {
     margin: 0 5px;
     justify-content: center;
     padding-right: 5px;
@@ -144,11 +165,13 @@ i {
 .left-side ul li {
     padding: 10px;
     list-style-type: none;
+    border-bottom: 1px solid black;
 }
 
 .right-side ul li {
     padding: 10px;
     list-style-type: none;
+    border-bottom: 1px solid black;
 }
 
 p {
@@ -176,8 +199,21 @@ p {
     display: flex;
     margin-bottom: 10px;
     justify-content: space-evenly;
+
+}
+
+.delete-edit {
+    font-family: "Montserrat", sans-serif;
+    background-color: #e47911;
+    color: white;
+    border-radius: 6px;
+}
+
+.delete-edit a:visited {
+    color: white;
 }
 
 footer {
     text-align: center;
 }
+

@@ -90,9 +90,9 @@
             </li>
           </ul>
           <div class="delete-edit-btn">
-          <button><a href="/user/<%= user._id %>/ticket/<%= ticket._id %>/edit">Edit Ticket</a></button>
+          <button class="delete-edit"><a href="/user/<%= user._id %>/ticket/<%= ticket._id %>/edit">Edit Ticket</a></button>
           <form method="POST" action="/user/<%= user._id %>/ticket/<%= ticket._id %>?_method=DELETE">
-            <button type="submit">Delete Ticket</button>
+            <button type="submit" class="delete-edit">Delete Ticket</button>
           </form>
         </div>
         </div>

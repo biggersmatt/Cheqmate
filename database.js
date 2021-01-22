@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/cheqmate';
+const connectionString = process.env.MONGODB_URI || 'mongodb+srv://joeyg:1234@sei-cluster-0.besro.mongodb.net/cheqmate?retryWrites=true&w=majority';
 
 mongoose.connect(connectionString, {
   useNewUrlParser: true,

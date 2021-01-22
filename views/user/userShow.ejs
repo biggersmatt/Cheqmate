@@ -48,16 +48,33 @@
         <h2 class="tickets-open">Tickets</h2>
         <ul>
             <% user.tickets.forEach((one) => { %>
-                <li>
-                    <a href="/user/<%= user._id %>/ticket/<%= one._id %>"><%= one.title %></a> 
-                    <p><%= one.developer %></p>
+               <% if (one.status !== 'Complete') { %> 
+                <a href="/user/<%= user._id %>/ticket/<%= one._id %>">
+                  <li>
+                    <p><%= one.title %></p>
+                    <p><%= one.description %></p>
                     <p><%= one.status %></p>
                   </li>
-            <% }); %>
+                </a> 
+            <%   } %>
+             <% });  %> 
         </ul>
       </div>
       <div class="dashboard-completed">
         <h2 class="completed-tickets">Completed</h2>
+        <ul>
+       <%  user.tickets.forEach((one) => { %>
+          <% if (one.status === 'Complete') { %> 
+            <a href="/user/<%= user._id %>/ticket/<%= one._id %>">
+              <li>
+                <p><%= one.title %></p>
+                <p><%= one.description %></p>
+                <p><%= one.status %></p>
+              </li>
+            </a> 
+         <% } %>
+        <% }); %>
+      </ul>
       </div>
     </div>
   </main>
