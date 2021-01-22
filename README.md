@@ -2,7 +2,7 @@
 Cheqmate, a fully functioning bug(task) tracking application utilizing CRUD capibility and RESTful routes.
 
 ## Getting Started
-  - No installiation of any software needed. No CLI commands needed. Simply launch the application from this URL: and you're off to the races!
+  - No installiation of any software needed. No CLI commands needed. Simply launch the application from this URL: https://jgbm-cheqmate.herokuapp.com/ and you're off to the races!
 
   
 ### Technologies Used
