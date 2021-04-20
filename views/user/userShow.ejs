@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles/dashboard.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/90405cb4a8.js" crossorigin="anonymous"></script>
-  <title>Cheqmate</title>
-</head>
-<body>
-
-  <header>
-    <img src="/images/logo.png" alt="logo">
-    <h3>Welcome, <%= user.name %>!</h3>
-    <nav>
-      <a href="/">Logout</a> |
-      <a href="/"><i class="fas fa-user"></i>Profile</a>
-    </nav>
-  </header>
-  
-  <main>
-    <div class="dashboard-admin">
-      <div class="admin-buttons">
-        <i class="fas fa-ticket-alt"></i>
-        <a href="/user/<%= user._id %>/ticket/new">New Ticket</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/90405cb4a8.js" crossorigin="anonymous"></script>
+    <title>Cheqmate</title>
+  </head>
+  <body>
+    <header>
+      <img src="/images/logo.png" alt="logo" />
+      <h3>Welcome, <%= user.name %>!</h3>
+      <nav>
+        <a href="/">Logout</a> |
+        <a href="/"><i class="fas fa-user"></i>Profile</a>
+      </nav>
+    </header>
+    <main>
+      <div class="dashboard-admin">
+        <div class="admin-buttons">
+          <i class="fas fa-ticket-alt"></i>
+          <a href="/user/<%= user._id %>/ticket/new">New Ticket</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-users"></i>
+          <a href="/">Users</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-clipboard-list"></i>
+          <a href="/">Projects</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-tasks"></i>
+          <a href="/">My Tickets</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-project-diagram"></i>
+          <a href="/">My Projects</a>
+        </div>
       </div>
-      <div class="admin-buttons">
-        <i class="fas fa-users"></i>
-        <a href="/">Users</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-clipboard-list"></i>
-        <a href="/">Projects</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-tasks"></i>
-        <a href="/">My Tickets</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-project-diagram"></i>
-        <a href="/">My Projects</a>
-      </div>
-    </div>
-    <div class="dashboard-alltickets">
-      <div class="dashboard-tickets">
-        <h2 class="tickets-open">Tickets</h2>
-        <ul>
+      <div class="dashboard-alltickets">
+        <div class="dashboard-tickets">
+          <h2 class="tickets-open">Tickets</h2>
+          <ul>
             <% user.tickets.forEach((one) => { %>
-               <% if (one.status !== 'Complete') { %> 
+              <% if (one.status !== 'Complete') { %> 
                 <a href="/user/<%= user._id %>/ticket/<%= one._id %>">
                   <li>
                     <p><%= one.title %></p>
@@ -56,27 +54,27 @@
                     <p><%= one.status %></p>
                   </li>
                 </a> 
-            <%   } %>
-             <% });  %> 
-        </ul>
+              <%   } %>
+            <% });  %> 
+          </ul>
+        </div>
+        <div class="dashboard-completed">
+          <h2 class="completed-tickets">Completed</h2>
+          <ul>
+            <% user.tickets.forEach((one) => { %>
+              <% if (one.status === 'Complete') { %> 
+                <a href="/user/<%= user._id %>/ticket/<%= one._id %>">
+                  <li>
+                    <p><%= one.title %></p>
+                    <p><%= one.description %></p>
+                    <p><%= one.status %></p>
+                  </li>
+                </a> 
+              <% } %>
+            <% }); %>
+          </ul>
+        </div>
       </div>
-      <div class="dashboard-completed">
-        <h2 class="completed-tickets">Completed</h2>
-        <ul>
-       <%  user.tickets.forEach((one) => { %>
-          <% if (one.status === 'Complete') { %> 
-            <a href="/user/<%= user._id %>/ticket/<%= one._id %>">
-              <li>
-                <p><%= one.title %></p>
-                <p><%= one.description %></p>
-                <p><%= one.status %></p>
-              </li>
-            </a> 
-         <% } %>
-        <% }); %>
-      </ul>
-      </div>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 </html>
