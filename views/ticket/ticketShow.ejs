@@ -1,114 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles/dashboard.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/90405cb4a8.js" crossorigin="anonymous"></script>
-  <title>Cheqmate</title>
-</head>
-<body>
-  <header>
-    <img src="/images/logo.png" alt="logo">
-    <h3>Ticket for: <%= ticket.title %> </h3>
-    <nav>
-      <a href="/">Logout</a> |
-      <a href="/"><i class="fas fa-user"></i>Profile</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="dashboard-admin">
-      <div class="admin-buttons">
-        <i class="fas fa-home"></i>
-        <a href="/user/<%= user._id %> ">Dashboard</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-ticket-alt"></i>
-        <a href="/user/<%= user._id %>/ticket/new">New Ticket</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-users"></i>
-        <a href="/">Users</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-clipboard-list"></i>
-        <a href="/">Projects</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-tasks"></i>
-        <a href="/">My Tickets</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-project-diagram"></i>
-        <a href="/">My Projects</a>
-      </div>
-    </div>
-
-  
-    <div class="dashboard-alltickets">
-      <div class="ticket-show">
-        <div class="left-side">
-          <ul>
-            <li>
-              <h3>Ticket Title</h3> 
-              <p><%= ticket.title %></p> 
-            </li>
-            <li>
-              <h3>Assigned Developer</h3> 
-              <p><%= ticket.developer %></p> 
-            </li>
-            <li>
-              <h3>Project</h3>
-              <p><%= ticket.project %> </p>
-            </li>
-            <li>
-              <h3>Ticket Status</h3>
-              <p><%= ticket.status %> </p>
-            </li>
-          </ul>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/90405cb4a8.js" crossorigin="anonymous"></script>
+    <title>Cheqmate</title>
+  </head>
+  <body>
+    <header>
+      <img src="/images/logo.png" alt="logo">
+      <h3>Ticket for: <%= ticket.title %> </h3>
+      <nav>
+        <a href="/">Logout</a> |
+        <a href="/"><i class="fas fa-user"></i>Profile</a>
+      </nav>
+    </header>
+    <main>
+      <div class="dashboard-admin">
+        <div class="admin-buttons">
+          <i class="fas fa-home"></i>
+          <a href="/user/<%= user._id %> ">Dashboard</a>
         </div>
-        <div class="right-side">
-          <ul>
-            <li>
-              <h3>Due Date</h3>
-              <p><%= new Date(ticket.dueDate).toLocaleDateString() %></p> 
-            </li>
-            <li>
-              <h3>Ticket Description</h3>
-              <p><%= ticket.description %></p>
-            </li>
-            <li>
-              <h3>Submitted</h3> 
-              <p><%= ticket.submitted %></p> 
-            </li>
-            <li>
-              <h3>Ticket Priority</h3> 
-              <p><%= ticket.priority %></p> 
-            </li>
-          </ul>
-          <div class="delete-edit-btn">
-          <button class="delete-edit"><a href="/user/<%= user._id %>/ticket/<%= ticket._id %>/edit">Edit Ticket</a></button>
-          <form method="POST" action="/user/<%= user._id %>/ticket/<%= ticket._id %>?_method=DELETE">
-            <button type="submit" class="delete-edit">Delete Ticket</button>
+        <div class="admin-buttons">
+          <i class="fas fa-ticket-alt"></i>
+          <a href="/user/<%= user._id %>/ticket/new">New Ticket</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-users"></i>
+          <a href="/">Users</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-clipboard-list"></i>
+          <a href="/">Projects</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-tasks"></i>
+          <a href="/">My Tickets</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-project-diagram"></i>
+          <a href="/">My Projects</a>
+        </div>
+      </div>
+      <div class="dashboard-alltickets">
+        <div class="ticket-show">
+          <div class="left-side">
+            <ul>
+              <li>
+                <h3>Ticket Title</h3> 
+                <p><%= ticket.title %></p> 
+              </li>
+              <li>
+                <h3>Assigned Developer</h3> 
+                <p><%= ticket.developer %></p> 
+              </li>
+              <li>
+                <h3>Project</h3>
+                <p><%= ticket.project %> </p>
+              </li>
+              <li>
+                <h3>Ticket Status</h3>
+                <p><%= ticket.status %> </p>
+              </li>
+            </ul>
+          </div>
+          <div class="right-side">
+            <ul>
+              <li>
+                <h3>Due Date</h3>
+                <p><%= new Date(ticket.dueDate).toLocaleDateString() %></p> 
+              </li>
+              <li>
+                <h3>Ticket Description</h3>
+                <p><%= ticket.description %></p>
+              </li>
+              <li>
+                <h3>Submitted</h3> 
+                <p><%= ticket.submitted %></p> 
+              </li>
+              <li>
+                <h3>Ticket Priority</h3> 
+                <p><%= ticket.priority %></p> 
+              </li>
+            </ul>
+            <div class="delete-edit-btn">
+              <button class="delete-edit">
+                <a href="/user/<%= user._id %>/ticket/<%= ticket._id %>/edit">Edit Ticket</a>
+              </button>
+              <form method="POST" action="/user/<%= user._id %>/ticket/<%= ticket._id %>?_method=DELETE">
+                <button type="submit" class="delete-edit">Delete Ticket</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="attachment-div">
+          <h3 class="attachment-title">Add an Attachment?</h3>
+          <form action="/">
+            <div class="attachment-buttons">
+              <input type="file" id="myFile" name="filename">
+              <button type="submit">
+              <i class="fas fa-cloud"></i> Upload File</button>
+            </div>
           </form>
         </div>
-        </div>
       </div>
-      <div id="attachment-div">
-        <h3 class="attachment-title">Add an Attachment?</h3>
-        <form action="/">
-        <div class="attachment-buttons">
-            <input type="file" id="myFile" name="filename">
-            <button type="submit">
-            <i class="fas fa-cloud"></i> Upload File</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</main>
-</body>
+    </main>
+  </body>
 </html>
