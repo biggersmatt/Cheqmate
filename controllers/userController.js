@@ -4,7 +4,6 @@ const db = require('../database');
 
 // Current route '/user'
 
-
 // GET new user sign up page
 router.get('/new', (req, res) => {
   res.render('./user/userNew');
@@ -14,12 +13,8 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
   console.log('New User Created');
   db.User.create(req.body, (err, userCreated) => {
-    if (err) {
-      console.log(err);
-    }
-    if (!userCreated) {
-      return res.redirect('/user/new');
-    }
+    if(err) console.log(err);
+    if(!userCreated) res.redirect('/user/new');
     res.redirect('/');
   });
 });
@@ -27,23 +22,17 @@ router.post('/', (req, res) => {
 // POST ROUTE to handle User Login Form
 router.post('/login', (req, res) => {
   db.User.findOne({email: req.body.email}, (err, foundUser) => {
-    if (err) {
-      console.log(err);
-    }
-    if (!foundUser) {
-      return res.redirect('/');
-    }
+    if(err) console.log(err);
+    if(!foundUser) res.redirect('/');
     // Verify the submitted email and password match
-    if (foundUser.password === req.body.password) {
-      return res.redirect(`/user/${foundUser.id}`);
-    }
+    if(foundUser.password === req.body.password) res.redirect(`/user/${foundUser.id}`);
     res.render('index');
   });
 });
 
 // GET user show dashboard
 router.get('/:id', (req, res) => {
-    db.User.findById(req.params.id)
+  db.User.findById(req.params.id)
     .populate('tickets')
     .exec((err, foundUser) => {
       if(err) console.log(err);
@@ -53,6 +42,5 @@ router.get('/:id', (req, res) => {
       res.render('./user/userShow', context);
     });
   });
-
 
 module.exports = router;

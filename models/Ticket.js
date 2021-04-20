@@ -3,34 +3,34 @@ const mongoose = require('mongoose');
 const ticketSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    // required: true,
   },
   developer: {
     type: String,
-    required: true,
+    // required: true,
   },
   project: {
     type: String,
-    required: true,
+    // required: true,
   },
   status: {
     type: String,
-    required: true,
+    // required: true,
   },
   dueDate: {
     type: Date,
-    required: true,
+    // required: true,
   },
   description: {
     type: String,
-    required: true,
+    // required: true,
   },
   submitted: {
     type: String,
   },
   priority: {
     type: String,
-    required: true,
+    // required: true,
   },
 });
 
