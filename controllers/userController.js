@@ -35,15 +35,23 @@ router.post('/login', (req, res) => {
 /****GET****/
 // Populate Infomation for Dashboard
 router.get('/:id', (req, res) => {
-  db.User.findById(req.params.id)
-    .populate('tickets')
-    .exec((err, foundUser) => {
-      if(err) console.log(err);
-      const context = {
-        user: foundUser,
-      }
-      res.render('./user/userShow', context);
-    });
+  db.User.findById(req.params.id, (err, foundUser) => {
+    if(err) console.log(err);
+    const context = {
+      user: foundUser,
+    }
+    res.render('./user/userShow', context);
   });
+});
+// router.get('/:id', (req, res) => {
+//   db.User.findById(req.params.id)
+//     .populate('tickets')
+//     .exec((err, foundUser) => {
+//       if(err) console.log(err);
+//       const context = {
+//         user: foundUser,
+//       }
+//       res.render('./user/userShow', context);
+//     });
 
 module.exports = router;
