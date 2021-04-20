@@ -1,126 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles/dashboard.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/90405cb4a8.js" crossorigin="anonymous"></script>
-  <title>Cheqmate</title>
-</head>
-<body>
-  <header>
-    <img src="/images/logo.png" alt="logo">
-    <h3>Editing Ticket: <%= ticket.title %> </h3>
-    <nav>
-      <a href="/">Logout</a> |
-      <a href="/"><i class="fas fa-user"></i>Profile</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="dashboard-admin">
-      <div class="admin-buttons">
-        <i class="fas fa-home"></i>
-        <a href="/user/<%= user._id %>">Dashboard</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/90405cb4a8.js" crossorigin="anonymous"></script>
+    <title>Cheqmate</title>
+  </head>
+  <body>
+    <header>
+      <img src="/images/logo.png" alt="logo" />
+      <h3>Editing Ticket: <%= ticket.title %></h3>
+      <nav>
+        <a href="/">Logout</a> |
+        <a href="/"><i class="fas fa-user"></i>Profile</a>
+      </nav>
+    </header>
+    <main>
+      <div class="dashboard-admin">
+        <div class="admin-buttons">
+          <i class="fas fa-home"></i>
+          <a href="/user/<%= user._id %>">Dashboard</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-ticket-alt"></i>
+          <a href="/user/<%= user._id %>/ticket/new">New Ticket</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-users"></i>
+          <a href="/">Users</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-clipboard-list"></i>
+          <a href="/">Projects</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-tasks"></i>
+          <a href="/">My Tickets</a>
+        </div>
+        <div class="admin-buttons">
+          <i class="fas fa-project-diagram"></i>
+          <a href="/">My Projects</a>
+        </div>
       </div>
-      <div class="admin-buttons">
-        <i class="fas fa-ticket-alt"></i>
-        <a href="/user/<%= user._id %>/ticket/new">New Ticket</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-users"></i>
-        <a href="/">Users</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-clipboard-list"></i>
-        <a href="/">Projects</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-tasks"></i>
-        <a href="/">My Tickets</a>
-      </div>
-      <div class="admin-buttons">
-        <i class="fas fa-project-diagram"></i>
-        <a href="/">My Projects</a>
-      </div>
-    </div>
-
-    <div class="dashboard-alltickets">
+      <div class="dashboard-alltickets">
         <form action="/user/<%= user._id %>/ticket/<%= ticket._id %>?_method=PUT" method="POST">
           <div class="ticket-show">
             <div class="left-side">
-            <ul>
-              <li>
-                <h3>Ticket Title</h3> 
-                <input type="text" id="title" name="title" value="<%= ticket.title %>">
-              </li>
-              <li>
-                <h3>Assigned Developer</h3> 
-                <input type="text" id="developer" name="developer" value="<%= ticket.developer %>"> 
-              </li>
-              <li>
-                <h3>Project</h3>
-                <input type="text" id="project" name="project" value="<%= ticket.project %>">
-              </li>
-              <li>
-                <h3>Ticket Status</h3>
-                <select name="status" id="status" value="<%= ticket.status %>">
-                  <option value="Open">Open</option>
-                  <option value="In-Progress">In-Progress</option>
-                  <option value="Complete">Complete</option>
-                </select>
-              </li>
-            </ul>
-          </div>
-          <div class="right-side">
-            <ul>
-              <li>
-                <h3>Due Date</h3>
-                <input type="date" id="dueDate" name="dueDate" value="<%= ticket.dueDate %>"> 
-              </li>
-              <li>
-                <h3>Ticket Description</h3>
-                <input type="text" id="description" name="description" value="<%= ticket.description %>">
-              </li>
-              <li>
-                <h3>Submitted</h3> 
-                <select name="submitted" id="submitted" value="<%= ticket.submitted %>">
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
-              </li>
-              <li>
-                <h3>Ticket Priority</h3> 
-                <select name="priority" id="priority" value="<%= ticket.priority %>">
-                  <option value="Low">Low</option>
-                  <option value="Medium">Medium</option>
-                  <option value="High">High</option>
-                </select>
-              </li>
-            </ul>
+              <ul>
+                <li>
+                  <h3>Ticket Title</h3> 
+                  <input type="text" id="title" name="title" value="<%= ticket.title %>">
+                </li>
+                <li>
+                  <h3>Assigned Developer</h3> 
+                  <input type="text" id="developer" name="developer" value="<%= ticket.developer %>"> 
+                </li>
+                <li>
+                  <h3>Project</h3>
+                  <input type="text" id="project" name="project" value="<%= ticket.project %>">
+                </li>
+                <li>
+                  <h3>Ticket Status</h3>
+                  <select name="status" id="status" value="<%= ticket.status %>">
+                    <option value="Open">Open</option>
+                    <option value="In-Progress">In-Progress</option>
+                    <option value="Complete">Complete</option>
+                  </select>
+                </li>
+              </ul>
+            </div>
+            <div class="right-side">
+              <ul>
+                <li>
+                  <h3>Due Date</h3>
+                  <input type="date" id="dueDate" name="dueDate" value="<%= ticket.dueDate %>"> 
+                </li>
+                <li>
+                  <h3>Ticket Description</h3>
+                  <input type="text" id="description" name="description" value="<%= ticket.description %>">
+                </li>
+                <li>
+                  <h3>Submitted</h3> 
+                  <select name="submitted" id="submitted" value="<%= ticket.submitted %>">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </li>
+                <li>
+                  <h3>Ticket Priority</h3> 
+                  <select name="priority" id="priority" value="<%= ticket.priority %>">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                  </select>
+                </li>
+              </ul>
+            </div>
             <div class="delete-edit-btn">
-            <button type="submit" class="delete-edit">Update</button>
-            </form>
-            <button class="delete-edit"><a href="/user/<%= user._id %>/ticket/<%= ticket._id %>">Cancel</a></button>
-        </div>
-        </div>
+              <button type="submit" class="delete-edit">Update</button>
+              <button class="delete-edit"><a href="/user/<%= user._id %>/ticket/<%= ticket._id %>">Cancel</a></button>
+            </div>
+          </div>
+        </form>
       </div>
       <div id="attachment-div">
         <h3 class="attachment-title">Add an Attachment?</h3>
         <form action="/">
-        <div class="attachment-buttons">
+          <div class="attachment-buttons">
             <input type="file" id="myFile" name="filename">
             <button type="submit">
-            <i class="fas fa-cloud"></i> Upload File</button>
+            <i class="fas fa-cloud"></i>Upload File</button>
           </div>
         </form>
-      </div>
-    </div>
-  </div>
-</main>
-
-
-</body>
+      </div> 
+    </main>
+  </body>
 </html>
