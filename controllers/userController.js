@@ -16,8 +16,6 @@ router.post('/', (req, res) => {
   db.User.create(req.body, (err, userCreated) => {
     if(err) console.log(err);
     res.redirect('/');
-    // res.send(userCreated);
-    // if(!userCreated) res.redirect('/user/new');
   });
 });
 
@@ -39,25 +37,14 @@ router.get('/:id', (req, res) => {
     if(err) console.log(err);
     db.Ticket.find({user: req.params.id}, (err, userTickets) => {
       if(err) console.log(err);
-      // res.send(userTickets)
       const context = {
         user: foundUser,
         tickets: userTickets,
-
+        
       }
       res.render('./user/userShow', context);
     })
   });
 });
-// router.get('/:id', (req, res) => {
-//   db.User.findById(req.params.id)
-//     .populate('tickets')
-//     .exec((err, foundUser) => {
-//       if(err) console.log(err);
-//       const context = {
-//         user: foundUser,
-//       }
-//       res.render('./user/userShow', context);
-//     });
 
 module.exports = router;
