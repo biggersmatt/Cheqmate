@@ -57,10 +57,10 @@
                 <h3>Assigned Developer</h3> 
                 <p><%= ticket.developer %></p> 
               </li>
-              <li>
+              <!-- <li>
                 <h3>Project</h3>
                 <p><%= ticket.project %> </p>
-              </li>
+              </li> -->
               <li>
                 <h3>Ticket Status</h3>
                 <p><%= ticket.status %> </p>
@@ -68,7 +68,7 @@
             </ul>
           </div>
           <div class="right-side">
-            <ul>
+            <!-- <ul>
               <li>
                 <h3>Due Date</h3>
                 <p><%= new Date(ticket.dueDate).toLocaleDateString() %></p> 
@@ -85,7 +85,7 @@
                 <h3>Ticket Priority</h3> 
                 <p><%= ticket.priority %></p> 
               </li>
-            </ul>
+            </ul> -->
             <div class="delete-edit-btn">
               <button class="delete-edit">
                 <a href="/user/<%= user._id %>/ticket/<%= ticket._id %>/edit">Edit Ticket</a>

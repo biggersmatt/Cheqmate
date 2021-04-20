@@ -67,6 +67,7 @@ router.put('/:id/ticket/:ticketId', (req, res) => {
   const updatedTicketObj = {
     title: req.body.title,
     developer: req.body.developer,
+    status: req.body.status,
   };
   db.Ticket.findByIdAndUpdate(ticketId, updatedTicketObj, 
   {new: true}, 
