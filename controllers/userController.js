@@ -11,27 +11,29 @@ router.get('/new', (req, res) => {
 
 /****POST****/
 // Create New User
+// Redirect to Login Page
 router.post('/', (req, res) => {
   db.User.create(req.body, (err, userCreated) => {
     if(err) console.log(err);
+    res.redirect('/');
     // res.send(userCreated);
     // if(!userCreated) res.redirect('/user/new');
-    res.redirect('/');
   });
 });
 
-// POST ROUTE to handle User Login Form
+/****POST****/
+// Submit Login Info
 router.post('/login', (req, res) => {
-  db.User.findOne({email: req.body.email}, (err, foundUser) => {
+  db.User.findOne({username: req.body.username}, (err, foundUser) => {
     if(err) console.log(err);
     if(!foundUser) res.redirect('/');
-    // Verify the submitted email and password match
     if(foundUser.password === req.body.password) res.redirect(`/user/${foundUser.id}`);
     res.render('index');
   });
 });
 
-// GET user show dashboard
+/****GET****/
+// Populate Infomation for Dashboard
 router.get('/:id', (req, res) => {
   db.User.findById(req.params.id)
     .populate('tickets')
