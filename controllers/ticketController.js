@@ -19,6 +19,7 @@ router.post('/:id/ticket', (req, res) => {
   ticket = {
     title: req.body.title,
     developer: req.body.developer,
+    status: req.body.status,
     user: req.params.id,
   }
   db.Ticket.create(ticket, (err, newTicket) => {
