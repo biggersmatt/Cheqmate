@@ -37,10 +37,16 @@ router.post('/login', (req, res) => {
 router.get('/:id', (req, res) => {
   db.User.findById(req.params.id, (err, foundUser) => {
     if(err) console.log(err);
-    const context = {
-      user: foundUser,
-    }
-    res.render('./user/userShow', context);
+    db.Ticket.find({user: req.params.id}, (err, userTickets) => {
+      if(err) console.log(err);
+      // res.send(userTickets)
+      const context = {
+        user: foundUser,
+        tickets: userTickets,
+
+      }
+      res.render('./user/userShow', context);
+    })
   });
 });
 // router.get('/:id', (req, res) => {
