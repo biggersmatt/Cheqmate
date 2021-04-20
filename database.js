@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const connectionString = process.env.MONGODB_URI || 'mongodb+srv://joeyg:1234@sei-cluster-0.besro.mongodb.net/cheqmate?retryWrites=true&w=majority';
-
+const mongoose = require("mongoose");
+// const connectionString = process.env.MONGODB_URI || "mongodb+srv://joeyg:1234@sei-cluster-0.besro.mongodb.net/cheqmate?retryWrites=true&w=majority";
+const connectionString = "mongodb://localhost:27017/cheqmate";
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -8,19 +8,19 @@ mongoose.connect(connectionString, {
   useFindAndModify: false,
 });
 
-mongoose.connection.on('connected', () => {
-  console.log('MongoDB connected successfully');
+mongoose.connection.on("connected", () => {
+  console.log("MongoDB connected successfully");
 });
 
-mongoose.connection.on('disconnected', () => {
-  console.log('MongoDB disconnected');
+mongoose.connection.on("disconnected", () => {
+  console.log("MongoDB disconnected");
 });
 
-mongoose.connection.on('error', (err) => {
+mongoose.connection.on("error", (err) => {
   console.log(err);
 });
 
 module.exports = {
-  Ticket: require('./models/Ticket'),
-  User: require('./models/User'),
+  Ticket: require("./models/Ticket"),
+  User: require("./models/User"),
 };

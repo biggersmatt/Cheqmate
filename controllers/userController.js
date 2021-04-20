@@ -4,17 +4,18 @@ const db = require('../database');
 
 // Current route '/user'
 
-// GET new user sign up page
+// Render Sign Up Page
 router.get('/new', (req, res) => {
   res.render('./user/userNew');
 })
 
-// POST ROUTE to create new user
+/****POST****/
+// Create New User
 router.post('/', (req, res) => {
-  console.log('New User Created');
   db.User.create(req.body, (err, userCreated) => {
     if(err) console.log(err);
-    if(!userCreated) res.redirect('/user/new');
+    // res.send(userCreated);
+    // if(!userCreated) res.redirect('/user/new');
     res.redirect('/');
   });
 });
