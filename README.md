@@ -12,6 +12,8 @@ Cheqmate, a fully functioning bug(task) tracking application utilizing CRUD capi
     - Mongoose
     - EJS
     - Heroku
+    - JavaScript
+    - CSS3
     
 ### Existing Features
   * User has ability to create an account
