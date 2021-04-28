@@ -1,27 +1,21 @@
+/* Universal */
 :root {
   --green: rgb(38,185,108);
   --orange: rgb(228,121,17);
+	--grey: rgb(205, 205, 205);
 }
-
 * {
 	padding: 0;
 	margin: 0;
 }
-
 body {
-  background-color: #CDCDCD;
+  background-color: var(--grey);
   font-family: "Montserrat", sans-serif;
 }
-
-h1 {
-  margin: 0;
-}
-
 a {
   text-decoration: none;
   color: black;
 }
-
 a:visited {
   text-decoration: none;
   color: black;
@@ -58,7 +52,8 @@ main {
 	flex-direction: column;
 	justify-content: space-around;
 	height: calc(100vh - 86.5px);
-	width: 50vw;
+	width: 30vw;
+	max-width: 148.008px;
 	background-color: white;
 	border-radius: 10px;
 	border: 1px solid black;
@@ -102,30 +97,31 @@ main {
 }
 
 /* Open Tickets */
-.open-tickets {
+.tickets {
 	height: 48.6%;
+	width: 70vw;
 	border-radius: 10px;
 	background-color: white;
 	margin: 5px; 
 	border: 1px solid black;    
 }
 
-.open-tickets-title {
+.tickets-title {
 	text-align: center;
 }
 
-.open-ticket-description {
+.ticket-description {
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
 	border-bottom: 1px solid gray;
 }
 
-.open-ticket-description p {
+.ticket-description p {
 	font-size: 5vw;
 }
 
-.open-ticket {
+.ticket {
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid gray;
@@ -134,44 +130,19 @@ main {
 	transition: transform ease 0.4s;
 }
 
-.open-ticket:hover {
+.ticket:hover {
 	background-color: var(--orange);
 	border-radius: 5px;
-	transform: scale(1.05);
+	transform: scale(1.025);
 }
 
-/* Complete Tickets */
-.completed-tickets {
-	padding-left: 10px;
-	margin: 0;
-	border-bottom: 2px solid black;
-}
-
-.dashboard-completed ul li {
-	display: flex;
-	justify-content: space-between;
-	padding: 10px;
-	margin-right: 40px;
-	border-bottom: 1px solid gray;
-}
-
-.dashboard-completed ul li:hover {
-	background-color: #e47911;
-	border-radius: 5px;
-}
-
-.dashboard-completed ul li p {
-	margin: 0 5px;
-	justify-content: center;
-	padding-right: 5px;
-}
-
-.dashboard-completed {
-	height: 48.5%;
-	border-radius: 10px;
-	background-color: white;
-	margin: 5px;
-	border: 1px solid black;
+@media (min-width: 560px) {
+	.admin-icon {
+		font-size: 44.5px;
+	}
+	.admin-item {
+		font-size: 22.4px;
+	}
 }
 
 /* .ticket-show {
