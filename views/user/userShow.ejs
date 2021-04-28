@@ -20,26 +20,26 @@
     <main>
       
       <div class="dashboard-admin">
-        <a href="/user/<%= user._id %>/ticket/new" class="admin-buttons">
-          <i class="fas fa-ticket-alt"></i>
-          <p>New Ticket</p>
+        <a href="/user/<%= user._id %>/ticket/new" class="admin-btns">
+          <i class="fas fa-ticket-alt admin-icon"></i>
+          <p class="admin-item">New Ticket</p>
         </a>
-        <div class="admin-buttons">
-          <i class="fas fa-users"></i>
-          <a href="/">Users</a>
-        </div>
-        <div class="admin-buttons">
-          <i class="fas fa-clipboard-list"></i>
-          <a href="/">Tasks</a>
-        </div>
-        <div class="admin-buttons">
-          <i class="fas fa-tasks"></i>
-          <a href="/">Tickets</a>
-        </div>
-        <div class="admin-buttons">
-          <i class="fas fa-project-diagram"></i>
-          <a href="/">Projects</a>
-        </div>
+				<a href="/" class="admin-btns">
+          <i class="fas fa-users admin-icon"></i>
+					<p class="admin-item">Users</p>
+				</a>
+				<a href="/" class="admin-btns">
+          <i class="fas fa-clipboard-list admin-icon"></i>
+					<p class="admin-item">Tasks</p>
+        </a>
+        <a href="/" class="admin-btns">
+          <i class="fas fa-tasks admin-icon"></i>
+					<p class="admin-item">Tickets</p>
+        </a>
+        <a href="/" class="admin-btns">
+          <i class="fas fa-project-diagram admin-icon"></i>
+					<p class="admin-item">Projects</p>
+        </a>
       </div>
 
       <div class="dashboard-alltickets">
