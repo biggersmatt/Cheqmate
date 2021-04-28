@@ -1,0 +1,72 @@
+:root {
+  --green: rgb(38,185,108);
+  --btn-blue: rgb(2,90,171);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/snowmoutanins.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Login */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: grey;
+  opacity: 0.9;
+  border-radius: 10px;
+  height: 40%;
+  width: 90%;
+  max-width: 400px;
+}
+
+.login-logo {
+  height: 35%;
+  width: 80%;
+  padding: 10px;
+  margin: 30px 0 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.login-input {
+  line-height: 24px;
+  width: 80%;
+  margin: 8px 0;
+}
+
+.login-button {
+  width: 125px;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--btn-blue);
+  color: white;
+  border-radius: 6px;
+}
+
+.login-signup {
+  color: var(--green);
+  font-weight: 900;
+}

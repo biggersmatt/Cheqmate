@@ -24,7 +24,7 @@ a:visited {
     color: inherit;
 }
 
-/* Login */
+/* Login
 #login-container {
     background-color: grey;
     opacity: 0.9;
@@ -61,7 +61,7 @@ a:visited {
 
 #login-signup {
     color: var(--green);
-}
+} */
 
 
 /* Sign Up */

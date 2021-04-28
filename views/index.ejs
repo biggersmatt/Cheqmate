@@ -3,28 +3,32 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/loginPage.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Cheqmate</title>
   </head>
   <body>
-    <main id="login-container">
-      <img id="login-logo" src="images/logo.png" alt="logo" />
-      <form action="/user/login" method="POST">
-        <ul class="login-form">
-          <li>
-            <input type="username" name="username" id="username" placeholder="Username">
-          </li>
-          <li>
-            <input type="password" name="password" id="password" placeholder="Password">
-          </li>
-          <li>
-            <button type="submit" id="login-button">Login</button>
-          </li>
-        </ul>
+    <main class="login-container">
+      <img class="login-logo" src="images/logo.png" alt="logo" />
+      <form action="/user/login" method="POST" class="login-form">
+        <input 
+          type="username" 
+          name="username" 
+          id="username" 
+          placeholder="Username"
+          class="login-input" 
+        />
+        <input 
+          type="password" 
+          name="password" 
+          id="password" 
+          placeholder="Password"
+          class="login-input"
+        />
+        <button type="submit" class="login-button">Login</button>
       </form>
-      <p>Not a user? <a href="/user/new"><span id="login-signup">Sign up</span></a></p>
+      <p>Not a user? <a href="/user/new"><span class="login-signup">Sign up</span></a></p>
     </main>
   </body>
 </html>
