@@ -17,39 +17,28 @@
       <a href="/">Logout</a>
     </nav>
 
-    <!-- <header>
-      <img src="/images/logo.png" alt="logo" />
-      <h3>Welcome, <%= user.username %>!</h3>
-      <nav>
-        <a href="/">Logout</a> |
-        <a href="/">
-          <i class="fas fa-user"></i>Profile
-        </a>
-      </nav>
-    </header> -->
-
     <main>
       
       <div class="dashboard-admin">
-        <div class="admin-buttons">
+        <a href="/user/<%= user._id %>/ticket/new" class="admin-buttons">
           <i class="fas fa-ticket-alt"></i>
-          <a href="/user/<%= user._id %>/ticket/new">New Ticket</a>
-        </div>
+          <p>New Ticket</p>
+        </a>
         <div class="admin-buttons">
           <i class="fas fa-users"></i>
           <a href="/">Users</a>
         </div>
         <div class="admin-buttons">
           <i class="fas fa-clipboard-list"></i>
-          <a href="/">Projects</a>
+          <a href="/">Tasks</a>
         </div>
         <div class="admin-buttons">
           <i class="fas fa-tasks"></i>
-          <a href="/">My Tickets</a>
+          <a href="/">Tickets</a>
         </div>
         <div class="admin-buttons">
           <i class="fas fa-project-diagram"></i>
-          <a href="/">My Projects</a>
+          <a href="/">Projects</a>
         </div>
       </div>
 

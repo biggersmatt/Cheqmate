@@ -41,12 +41,13 @@ main {
     display: flex;
 }
 
+/* DashBoard Navigation */
 .dashboard-admin {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: calc(100vh - 90px);
-    width: 60vw;
+    width: 50vw;
     /* min-width: 130px; */
     background-color: white;
     border-radius: 10px;
@@ -72,24 +73,21 @@ main {
     background-color: var(--orange);
 }
 
+i {
+    height: 15px;
+    width: 15px;
+    color: var(--green);
+    padding: 0 2px;
+}
+
+/* All Tickets Open/Complete */
 .dashboard-alltickets {
     width: 100vw;
     max-width: 1300px;
     height: calc(100vh - 85px);
 }
 
-.tickets-open {
-    padding-left: 10px;
-    margin: 0;
-    border-bottom: 2px solid black;
-}
-
-.completed-tickets {
-    padding-left: 10px;
-    margin: 0;
-    border-bottom: 2px solid black;
-}
-
+/* Open Tickets */
 .dashboard-tickets {
     height: 48.6%;
     border-radius: 10px;
@@ -98,13 +96,18 @@ main {
     border: 1px solid black;    
 }
 
+.tickets-open {
+    padding-left: 10px;
+    margin: 0;
+    border-bottom: 2px solid black;
+}
+
 .dashboard-tickets ul li {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     margin-right: 40px;
     border-bottom: 1px solid gray;
-    
 }
 
 .dashboard-tickets ul li:hover {
@@ -118,13 +121,19 @@ main {
     padding-right: 5px;
 }
 
+/* Complete Tickets */
+.completed-tickets {
+    padding-left: 10px;
+    margin: 0;
+    border-bottom: 2px solid black;
+}
+
 .dashboard-completed ul li {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     margin-right: 40px;
     border-bottom: 1px solid gray;
-    
 }
 
 .dashboard-completed ul li:hover {
@@ -146,14 +155,7 @@ main {
     border: 1px solid black;
 }
 
-i {
-    height: 15px;
-    width: 15px;
-    color: var(--green);
-    padding: 0 2px;
-}
-
-.ticket-show {
+/* .ticket-show {
     margin: 10px;
     border-radius: 10px;
     display: flex;
@@ -218,5 +220,5 @@ p {
 
 footer {
     text-align: center;
-}
+} */
 
