@@ -20,7 +20,7 @@
     <main>
       
       <div class="dashboard-admin">
-        <a href="/user/<%= user._id %>/ticket/new" class="admin-btns">
+        <a href="/user/<%= user._id %>/ticket/new" class="admin-btns admin-new-ticket">
           <i class="fas fa-ticket-alt admin-icon"></i>
           <p class="admin-item">New Ticket</p>
         </a>
@@ -44,15 +44,18 @@
 
       <div class="dashboard-alltickets">
 
-        <div class="dashboard-tickets">
-          <h2 class="tickets-open">Tickets</h2>
+        <div class="open-tickets">
+          <h2 class="open-tickets-title">Open Tickets</h2>
           <ul>
+						<li class="open-ticket-description">
+							<p>Title</p>
+							<p>Status</p>
+						</li>
             <% tickets.forEach(ticket => { %>
-              <% if(ticket.status !== 'Complete') { %> 
+              <% if(ticket.status !== "Complete") { %> 
                 <a href="/user/<%= user._id %>/ticket/<%= ticket._id %>">
-                  <li>
+                  <li class="open-ticket">
                     <p><%= ticket.title %></p>
-                    <p><%= ticket.developer %></p>
                     <p><%= ticket.status %></p>
                   </li>
                 </a> 
@@ -65,7 +68,7 @@
           <h2 class="completed-tickets">Completed</h2>
           <ul>
             <% tickets.forEach(ticket => { %>
-              <% if (ticket.status === 'Complete') { %> 
+              <% if (ticket.status === "Complete") { %> 
                 <a href="/user/<%= user._id %>/ticket/<%= ticket._id %>">
                   <li>
                     <p><%= ticket.title %></p>

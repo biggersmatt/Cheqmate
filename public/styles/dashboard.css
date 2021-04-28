@@ -73,7 +73,7 @@ main {
 	height: 20%;
 	border-radius: 10px;
 	border-top: 1px solid grey;
-	margin: 5px;
+	/* margin: 5px; */
 	transition: background-color ease 0.4s;
 }
 
@@ -82,9 +82,13 @@ main {
 	background-color: var(--orange);
 }
 
+.admin-new-ticket {
+	border-top: 0;
+}
+
 .admin-icon {
 	color: var(--green);
-	font-size: 6vw;
+	font-size: 8vw;
 	padding: 0 2px;
 }
 
@@ -98,7 +102,7 @@ main {
 }
 
 /* Open Tickets */
-.dashboard-tickets {
+.open-tickets {
 	height: 48.6%;
 	border-radius: 10px;
 	background-color: white;
@@ -106,29 +110,34 @@ main {
 	border: 1px solid black;    
 }
 
-.tickets-open {
-	padding-left: 10px;
-	margin: 0;
-	border-bottom: 2px solid black;
+.open-tickets-title {
+	text-align: center;
 }
 
-.dashboard-tickets ul li {
+.open-ticket-description {
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
-	margin-right: 40px;
 	border-bottom: 1px solid gray;
 }
 
-.dashboard-tickets ul li:hover {
-	background-color: #e47911;
-	border-radius: 5px;
+.open-ticket-description p {
+	font-size: 5vw;
 }
 
-.dashboard-tickets ul li p {
-	margin: 0 5px;
-	justify-content: center;
-	padding-right: 5px;
+.open-ticket {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid gray;
+	padding: 10px;
+	margin: 0 10px;
+	transition: transform ease 0.4s;
+}
+
+.open-ticket:hover {
+	background-color: var(--orange);
+	border-radius: 5px;
+	transform: scale(1.05);
 }
 
 /* Complete Tickets */
