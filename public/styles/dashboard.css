@@ -1,5 +1,6 @@
 :root {
     --green: rgb(38,185,108);
+    --orange: rgb(228,121,17);
 }
 
 body {
@@ -13,27 +14,20 @@ h1 {
 
 a {
     text-decoration: none;
-    font-family: "Montserrat", sans-serif;
     color: black;
-
-}
-
-button {
-    font-family: "Montserrat", sans-serif;
 }
 
 a:visited {
     text-decoration: none;
     color: black;
-
 }
 
-header {
+nav {
     padding: 0 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #e47911;
+    background-color: var(--orange);
     border-radius: 10px;
     margin-right: 10px;
     border: 1px solid black;        
@@ -48,14 +42,34 @@ main {
 }
 
 .dashboard-admin {
-    height: calc(100vh - 90px);
-    min-width: 130px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    height: calc(100vh - 90px);
+    width: 60vw;
+    /* min-width: 130px; */
     background-color: white;
     border-radius: 10px;
-    margin-top: 10px;
     border: 1px solid black;
+    margin-top: 10px;
+}
+
+.admin-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 20%;
+    font-size: 20px;
+    border-radius: 10px;
+    border-top: 1px solid grey;
+    margin: 5px;
+    transition: background-color ease 0.4s;
+}
+
+.admin-buttons:hover {
+    cursor: pointer;
+    background-color: var(--orange);
 }
 
 .dashboard-alltickets {
@@ -130,17 +144,6 @@ main {
     background-color: white;
     margin: 10px;
     border: 1px solid black;
-}
-
-.admin-buttons {
-    padding: 25px 0;
-    margin: 0 5px;    
-}
-
-.admin-buttons:hover {
-    background-color:#e47911;
-    border-radius: 10px;
-    margin: 0;
 }
 
 i {

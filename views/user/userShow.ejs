@@ -10,17 +10,26 @@
     <title>Cheqmate</title>
   </head>
   <body>
-    <header>
+
+    <nav>
+      <img src="/images/logo.png" alt="logo" />
+      <h3>Welcome, <%= user.username %>!</h3>
+      <a href="/">Logout</a>
+    </nav>
+
+    <!-- <header>
       <img src="/images/logo.png" alt="logo" />
       <h3>Welcome, <%= user.username %>!</h3>
       <nav>
         <a href="/">Logout</a> |
-        <!-- <a href="/"> -->
+        <a href="/">
           <i class="fas fa-user"></i>Profile
-        <!-- </a> -->
+        </a>
       </nav>
-    </header>
+    </header> -->
+
     <main>
+      
       <div class="dashboard-admin">
         <div class="admin-buttons">
           <i class="fas fa-ticket-alt"></i>
@@ -28,22 +37,24 @@
         </div>
         <div class="admin-buttons">
           <i class="fas fa-users"></i>
-          <!-- <a href="/">Users</a> -->
+          <a href="/">Users</a>
         </div>
         <div class="admin-buttons">
           <i class="fas fa-clipboard-list"></i>
-          <!-- <a href="/">Projects</a> -->
+          <a href="/">Projects</a>
         </div>
         <div class="admin-buttons">
           <i class="fas fa-tasks"></i>
-          <!-- <a href="/">My Tickets</a> -->
+          <a href="/">My Tickets</a>
         </div>
         <div class="admin-buttons">
           <i class="fas fa-project-diagram"></i>
-          <!-- <a href="/">My Projects</a> -->
+          <a href="/">My Projects</a>
         </div>
       </div>
+
       <div class="dashboard-alltickets">
+
         <div class="dashboard-tickets">
           <h2 class="tickets-open">Tickets</h2>
           <ul>
@@ -60,6 +71,7 @@
             <% });  %> 
           </ul>
         </div>
+
         <div class="dashboard-completed">
           <h2 class="completed-tickets">Completed</h2>
           <ul>
@@ -76,7 +88,9 @@
             <% }); %>
           </ul>
         </div>
+
       </div>
+
     </main>
   </body>
 </html>
