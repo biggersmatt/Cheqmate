@@ -1,15 +1,16 @@
 /* All Tickets Open/Complete */
 .dashboard-alltickets {
-	width: 100vw;
+	width: 100%;
+	margin: 5px 5px 5px 0; 
 }
 
 /* Open Tickets */
 .tickets {
-	height: calc(((100vh - 10vh) - 26px) / 2);
+	height: calc(((100vh - (10vh - 5px)) - 26px) / 2);
 	border-radius: 10px;
 	background-color: white;
-	margin: 5px 5px 5px 0; 
-	border: 1px solid black;    
+	border: 1px solid black; 
+	margin: 0 0 5px 0;  
 }
 
 .tickets-title {
@@ -20,7 +21,7 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid grey;
 }
 
 .ticket-description p {
@@ -30,7 +31,7 @@
 .ticket {
 	display: flex;
 	justify-content: space-between;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid grey;
 	padding: 10px;
 	margin: 0 10px;
 	transition: transform ease 0.4s;
