@@ -27,7 +27,7 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 10vh;
+	height: calc(10vh - 5px);
 	background-color: var(--orange);
 	border-radius: 10px;
 	border: 1px solid black;        
@@ -63,7 +63,6 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	height: calc((100vh - 10vh) - 19px);
 	width: calc(30vw - 5px);
 	max-width: 148.008px;
 	background-color: white;
