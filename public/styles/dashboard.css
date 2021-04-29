@@ -9,6 +9,7 @@
 	margin: 0;
 }
 body {
+	height: calc(100vh - 5px);
   background-color: var(--grey);
   font-family: "Montserrat", sans-serif;
 }
@@ -26,11 +27,12 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	height: 10vh;
 	background-color: var(--orange);
 	border-radius: 10px;
 	border: 1px solid black;        
 	padding: 0 5px;
-	margin: 0 5px;
+	margin: 5px 5px 0;
 }
 
 .cheqmate-logo {
@@ -51,9 +53,8 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	height: calc(100vh - 86.5px);
+	height: calc((100vh - 10vh) - 19px);
 	width: calc(30vw - 5px);
-	/* width: 30vw; */
 	max-width: 148.008px;
 	background-color: white;
 	border-radius: 10px;
@@ -100,7 +101,8 @@ main {
 
 /* Open Tickets */
 .tickets {
-	height: 48.6%;
+	height: calc(((100vh - 10vh) - 26px) / 2);
+	/* height: 48.6%; */
 	border-radius: 10px;
 	background-color: white;
 	margin: 5px; 
