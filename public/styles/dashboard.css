@@ -35,12 +35,22 @@ nav {
 	margin: 5px 5px 0;
 }
 
-.cheqmate-logo {
+.nav-cheqmate-logo {
 	width: 18vw;
 	padding: 10px 0;
 }
 
+.nav-greeting {
+	color: white;
+}
+
+.nav-logout {
+	color: white;
+	transition: color ease 0.4s;
+}
+
 .nav-logout:hover {
+	color: var(--green);
 	cursor: pointer;
 }
 
@@ -59,7 +69,7 @@ main {
 	background-color: white;
 	border-radius: 10px;
 	border: 1px solid black;
-	margin: 5px 0 5px 5px;
+	margin: 5px;
 }
 
 .admin-btns {
@@ -70,7 +80,6 @@ main {
 	height: 20%;
 	border-radius: 10px;
 	border-top: 1px solid grey;
-	/* margin: 5px; */
 	transition: background-color ease 0.4s;
 }
 
@@ -105,7 +114,7 @@ main {
 	/* height: 48.6%; */
 	border-radius: 10px;
 	background-color: white;
-	margin: 5px; 
+	margin: 5px 5px 5px 0; 
 	border: 1px solid black;    
 }
 
@@ -145,6 +154,22 @@ main {
 	}
 	.admin-item {
 		font-size: 22.4px;
+	}
+	.ticket-description p {
+		font-size: 28px;
+	}
+}
+
+@media (min-width: 800px){
+	.nav-cheqmate-logo {
+		width: 143.984px;
+	}
+	.dashboard-alltickets {
+		display: flex;
+	}
+	.tickets {
+		height: calc((100vh - 10vh) - 19px);
+		width: 50%;
 	}
 }
 
