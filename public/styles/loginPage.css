@@ -32,8 +32,8 @@ a:visited {
   background-color: grey;
   opacity: 0.9;
   border-radius: 10px;
-  height: 65%;
-  width: 90%;
+  height: 350px;
+  width: 90vw;
   max-width: 400px;
 }
 
@@ -80,4 +80,10 @@ a:visited {
 
 .login-signup:hover {
   cursor: pointer;
+}
+
+@media (min-width: 375px) {
+  .login-logo {
+    width: 262.5px;
+  }
 }
