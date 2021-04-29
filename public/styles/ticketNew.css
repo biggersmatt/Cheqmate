@@ -121,13 +121,66 @@ main {
   justify-content: space-around;
   align-items: center;
   height: 15%;
+  width: 50%;
 }
 
 .ticket-info-section label {
-  font-size: 4vw;
+  font-size: 5vw;
 }
 
 .ticket-info-section input {
   width: 75%;
+  max-width: 229.961px;
   padding: 2px;
+}
+
+.ticket-info-section select {
+  padding: 4px;
+}
+
+.ticket-new-btns {
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  max-width: 459.922px;
+}
+
+.ticket-new-btn {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--orange);
+  border-radius: 6px;
+  color: white;
+  width: 40%;
+  padding: 5px;
+  transition: transform ease 0.4s;
+}
+
+.ticket-new-btn a {
+  color: white;
+}
+
+.ticket-new-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media (min-width: 560px) {
+	.admin-icon {
+		font-size: 44.5px;
+	}
+	.admin-item {
+		font-size: 22.4px;
+	}
+}
+
+@media (min-width: 800px){
+	.nav-cheqmate-logo {
+		width: 143.984px;
+	}
+  .ticket-info-section label {
+    font-size: 40px;
+  }
+  .ticket-new-btn {
+    width: 183.965px;
+  }
 }
