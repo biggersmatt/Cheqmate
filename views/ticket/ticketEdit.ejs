@@ -10,14 +10,11 @@
     <title>Cheqmate</title>
   </head>
   <body>
-    <header>
-      <img src="/images/logo.png" alt="logo" />
-      <h3>Editing Ticket: <%= ticket.title %></h3>
-      <nav>
-        <a href="/">Logout</a> |
-        <a href="/"><i class="fas fa-user"></i>Profile</a>
-      </nav>
-    </header>
+    <nav>
+      <img class="nav-cheqmate-logo" src="/images/logo.png" alt="logo" />
+      <h3 class="nav-greeting">User: <%= user.username %></h3>
+      <a href="/"><span class="nav-logout">Logout</span></a>
+    </nav>
     <main>
       <div class="dashboard-admin">
         <div class="admin-buttons">

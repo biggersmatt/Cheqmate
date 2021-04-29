@@ -9,6 +9,7 @@
 	margin: 0;
 }
 body {
+	/* height: calc(100vh - 5px); */
   background-color: var(--grey);
   font-family: "Montserrat", sans-serif;
 }
@@ -62,6 +63,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+  height: calc(100vh - (10vh - 5px) - 19px);
 	width: calc(30vw - 5px);
 	max-width: 148.008px;
 	background-color: white;
@@ -98,73 +100,4 @@ main {
 
 .admin-item {
 	font-size: 4vw;
-}
-
-/* All Tickets Open/Complete */
-.dashboard-alltickets {
-	width: 100vw;
-}
-
-/* Open Tickets */
-.tickets {
-	height: calc(((100vh - 10vh) - 26px) / 2);
-	border-radius: 10px;
-	background-color: white;
-	margin: 5px 5px 5px 0; 
-	border: 1px solid black;    
-}
-
-.tickets-title {
-	text-align: center;
-}
-
-.ticket-description {
-	display: flex;
-	justify-content: space-between;
-	padding: 10px;
-	border-bottom: 1px solid gray;
-}
-
-.ticket-description p {
-	font-size: 5vw;
-}
-
-.ticket {
-	display: flex;
-	justify-content: space-between;
-	border-bottom: 1px solid gray;
-	padding: 10px;
-	margin: 0 10px;
-	transition: transform ease 0.4s;
-}
-
-.ticket:hover {
-	background-color: var(--orange);
-	border-radius: 5px;
-	transform: scale(1.025);
-}
-
-@media (min-width: 560px) {
-	.admin-icon {
-		font-size: 44.5px;
-	}
-	.admin-item {
-		font-size: 22.4px;
-	}
-	.ticket-description p {
-		font-size: 28px;
-	}
-}
-
-@media (min-width: 800px){
-	.nav-cheqmate-logo {
-		width: 143.984px;
-	}
-	.dashboard-alltickets {
-		display: flex;
-	}
-	.tickets {
-		height: calc((100vh - 10vh) - 19px);
-		width: 50%;
-	}
 }
